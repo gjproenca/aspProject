@@ -15,17 +15,24 @@
                     <form>
                         <div class="form-group">
                             <label for="InputName">Your name</label>
-                            <input type="text" class="form-control" id="InputName" placeholder="Your name" maxlength="100">
+                            <%--<input type="text" class="form-control" id="inputName" placeholder="Your name" maxlength="100">--%>
+                            <%--asp textbox--%>
+                            <asp:TextBox class="form-control" ID="textBoxName" runat="server" TextMode="SingleLine" placeholder="Your name" MaxLength="100"></asp:TextBox>
                         </div>
                         <div class="form-group">
                             <label for="InputEmail1">Email address</label>
-                            <input type="email" class="form-control" id="InputEmail1" placeholder="Enter email" maxlength="70">
+                            <%--<input type="email" class="form-control" id="inputEmail" placeholder="Enter email" maxlength="70">--%>
+                            <%--asp textbox--%>
+                            <%--<asp:TextBox type="email" class="form-control" ID="textBoxEmail" runat="server" placeholder="Enter email" maxlength="70"></asp:TextBox>--%>
                         </div>
                         <div class="form-group">
                             <label for="Textarea">Write here</label>
-                            <textarea class="form-control" id="Textarea" rows="3" placeholder="Type here" maxlength="250"></textarea>
+                            <%--<textarea class="form-control" id="inputMessage" rows="3" placeholder="Type here" maxlength="250"></textarea>--%>
+                            <%--asp textbox--%>
+                            <%--<asp:TextBox class="form-control" ID="textBoxMessage" rows="3" runat="server" placeholder="Type here" maxlength="250" TextMode="MultiLine"></asp:TextBox>--%>
                         </div>
-                        <asp:Button class="btn btn-secondary" ID="submit" runat="server" Text="Submit" />
+                        <asp:LinkButton class="btn btn-secondary" ID="submit" runat="server" OnClick="submit_Click">Submit</asp:LinkButton>
+                        <input class="btn btn-secondary" id="reset" type="reset" value="Reset" />
                     </form>
                 </div>
             </div>
