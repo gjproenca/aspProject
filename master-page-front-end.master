@@ -1,0 +1,53 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="master-page-front-end.master.cs" Inherits="master_page_front_end" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="content/bootstrap.css" rel="stylesheet" type="text/css" />
+    <title>Hello, world!</title>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <nav class="navbar navbar-expand-md bg-primary navbar-dark">
+                <div class="container">
+                    <asp:HyperLink class="navbar-brand" ID="HyperLink1" runat="server" NavigateUrl="~/default.aspx">Navbar-brand</asp:HyperLink>
+                    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse text-center justify-content-end" id="navbar2SupportedContent">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Bookmarks</a>
+                            </li>
+                            <li class="nav-item">
+                                <asp:HyperLink class="nav-link" ID="contacts" runat="server" NavigateUrl="~/frontend/contacts.aspx">Contacts</asp:HyperLink>
+                            </li>
+                        </ul>
+                        <a class="btn navbar-btn btn-dark ml-2 text-white">Sign in</a>
+                        <a class="btn navbar-btn btn-dark ml-2 text-white">Sign up</a>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Optional JavaScript -->
+            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+            <script src="scripts/jquery-3.3.1.slim.min.js"></script>
+            <script src="scripts/popper.min.js"></script>
+            <script src="scripts/bootstrap.min.js"></script>
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
