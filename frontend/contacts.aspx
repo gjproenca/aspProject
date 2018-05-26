@@ -15,15 +15,15 @@
                     <form>
                         <div class="form-group">
                             <label for="InputName">Your name</label>
-                            <input type="text" class="form-control" id="InputName" placeholder="Your name">
+                            <input type="text" class="form-control" id="InputName" placeholder="Your name" maxlength="100">
                         </div>
                         <div class="form-group">
                             <label for="InputEmail1">Email address</label>
-                            <input type="email" class="form-control" id="InputEmail1" placeholder="Enter email">
+                            <input type="email" class="form-control" id="InputEmail1" placeholder="Enter email" maxlength="70">
                         </div>
                         <div class="form-group">
                             <label for="Textarea">Write here</label>
-                            <textarea class="form-control" id="Textarea" rows="3" placeholder="Type here"></textarea>
+                            <textarea class="form-control" id="Textarea" rows="3" placeholder="Type here" maxlength="250"></textarea>
                         </div>
                         <asp:Button class="btn btn-secondary" ID="submit" runat="server" Text="Submit" />
                     </form>
