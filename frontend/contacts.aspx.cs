@@ -27,13 +27,14 @@ public partial class frontend_contacts : System.Web.UI.Page
             con.Parameters.AddWithValue("@email", textBoxEmail.Text);
             con.Parameters.AddWithValue("@message", textBoxMessage.Text);
             con.ExecuteNonQuery();
-            conn.Close();
+            conn.Close();       
         }
         catch (Exception ex)
         {
+            Response.Redirect("~/frontend/error.aspx");
             //Response.Write("ERRO:" + ex.ToString());
-            Response.Write("Erro ao submeter of formulário!");
         }
+        Response.Redirect("~/frontend/success.aspx");
     }
 
 }
