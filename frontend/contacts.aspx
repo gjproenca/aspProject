@@ -21,19 +21,19 @@
                     <%--<form>--%>
                     <div class="form-group">
                         <label for="InputName">Your name</label>
-                        <asp:TextBox class="form-control" ID="textBoxName" runat="server" TextMode="SingleLine" placeholder="Your name" MaxLength="100"></asp:TextBox>
+                        <asp:TextBox class="form-control" ID="textBoxName" runat="server" TextMode="SingleLine" placeholder="Enter your name here" MaxLength="100"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Campo obrigatório!" ControlToValidate="textBoxName"></asp:RequiredFieldValidator>
                     </div>
                     <div class="form-group">
                         <label for="InputEmail1">Email address</label>
-                        <asp:TextBox type="email" class="form-control" ID="textBoxEmail" runat="server" placeholder="Enter email" MaxLength="70"></asp:TextBox>
+                        <asp:TextBox type="email" class="form-control" ID="textBoxEmail" runat="server" placeholder="Enter your email here" MaxLength="70"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Campo obrigatório!" ControlToValidate="textBoxEmail" CssClass="auto-style1"></asp:RequiredFieldValidator>
                     &nbsp;&nbsp;&nbsp;
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Email inválido!" ControlToValidate="textBoxEmail" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
                     </div>
                     <div class="form-group">
                         <label for="Textarea">Write here</label>
-                        <asp:TextBox class="form-control" ID="textBoxMessage" Rows="3" runat="server" placeholder="Type here" MaxLength="250" TextMode="MultiLine"></asp:TextBox>
+                        <asp:TextBox class="form-control" ID="textBoxMessage" Rows="3" runat="server" placeholder="Enter your message here" MaxLength="250" TextMode="MultiLine"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Campo obrigatório!" ControlToValidate="textBoxMessage"></asp:RequiredFieldValidator>
                     </div>
                     <asp:LinkButton class="btn btn-dark text-white" ID="submit" runat="server" OnClick="submit_Click">Submit</asp:LinkButton>

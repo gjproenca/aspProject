@@ -21,7 +21,7 @@ public partial class frontend_contacts : System.Web.UI.Page
         {
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
             conn.Open();
-            string insertquery = "INSERT INTO [Contact](NameContact,EmailContact,MessageContact) VALUES(@name,@email,@message)";
+            string insertquery = "INSERT INTO [Contact]([Name],[Email],[Message]) VALUES(@name,@email,@message)";
             SqlCommand con = new SqlCommand(insertquery, conn);
             con.Parameters.AddWithValue("@name", textBoxName.Text);
             con.Parameters.AddWithValue("@email", textBoxEmail.Text);
