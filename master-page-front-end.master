@@ -17,7 +17,7 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="body" runat="server">
         <div>
             <nav class="navbar navbar-expand-md bg-primary navbar-dark">
                 <div class="container">
@@ -40,23 +40,17 @@
                 </div>
             </nav>
 
-            <!-- Optional JavaScript -->
-            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-            <script src="scripts/jquery-3.3.1.slim.min.js"></script>
-            <script src="scripts/popper.min.js"></script>
-            <script src="scripts/bootstrap.min.js"></script>
-
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
 
             <div class="bg-dark text-white">
                 <div class="container">
-                    <div class="row">
-                        <div class="p-4 col-md-3">
+                    <div class="row text-center">
+                        <div class="mt-4 col-md-4">
                             <h2 class="mb-4 text-secondary">Pingendo</h2>
                             <p class="text-white">A company for whatever you may need, from website prototyping to publishing</p>
                         </div>
-                        <div class="p-4 col-md-3">
+                        <div class="mt-4 col-md-4">
                             <h2 class="mb-4 text-secondary">Mapsite</h2>
                             <ul class="list-unstyled">
                                 <a href="#" class="text-white">Home</a>
@@ -68,33 +62,20 @@
                                 <a href="#" class="text-white">Stories</a>
                             </ul>
                         </div>
-                        <div class="p-4 col-md-3">
+                        <div class="mt-4 col-md-4">
                             <h2 class="mb-4">Contact</h2>
                             <p>
                                 <a href="tel:+246 - 542 550 5462" class="text-white">
-                                    <i class="fa d-inline mr-3 text-secondary fa-phone"></i>+246 - 542 550 5462</a>
+                                    <i class="fa d-inline  text-secondary fa-phone"></i>+246 - 542 550 5462</a>
                             </p>
                             <p>
                                 <a href="mailto:info@pingendo.com" class="text-white">
-                                    <i class="fa d-inline mr-3 text-secondary fa-envelope-o"></i>info@pingendo.com</a>
+                                    <i class="fa d-inline  text-secondary fa-envelope-o"></i>info@pingendo.com</a>
                             </p>
                             <p>
                                 <a href="https://goo.gl/maps/AUq7b9W7yYJ2" class="text-white" target="_blank">
-                                    <i class="fa d-inline mr-3 fa-map-marker text-secondary"></i>365 Park Street, NY</a>
+                                    <i class="fa d-inline  fa-map-marker text-secondary"></i>365 Park Street, NY</a>
                             </p>
-                        </div>
-                        <div class="p-4 col-md-3">
-                            <h2 class="mb-4 text-light">Subscribe</h2>
-                            <%--<form>--%>
-                            <fieldset class="form-group text-white">
-                                <label for="exampleInputEmail1">Get our newsletter</label>
-                                <asp:TextBox class="form-control" ID="textBoxEmailNewsletter" runat="server" placeholder="Enter your email here" TextMode="Email"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="newsletterRequiredFieldValidator" runat="server" ErrorMessage="Campo obrigatório!" ControlToValidate="textBoxEmailNewsletter"></asp:RequiredFieldValidator>
-                                <br /> <%--TODO: fix one on top of the other leaving big balnk space--%>
-                                <asp:RegularExpressionValidator ID="newsletterRegExValidator" runat="server" ErrorMessage="Email inválido!" ControlToValidate="textBoxEmailNewsletter" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
-                            </fieldset>
-                            <asp:LinkButton class="btn btn-outline-secondary" ID="submitNewsletter" runat="server" OnClick="submitNewsletter_Click">Submit</asp:LinkButton>
-                            <%--</form>--%>
                         </div>
                     </div>
                     <div class="row">
@@ -105,6 +86,11 @@
                 </div>
             </div>
         </div>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="scripts/jquery-3.3.1.slim.min.js"></script>
+        <script src="scripts/popper.min.js"></script>
+        <script src="scripts/bootstrap.min.js"></script>
     </form>
 </body>
 </html>
