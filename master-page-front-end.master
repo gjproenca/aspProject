@@ -89,8 +89,9 @@
                             <fieldset class="form-group text-white">
                                 <label for="exampleInputEmail1">Get our newsletter</label>
                                 <asp:TextBox class="form-control" ID="textBoxEmailNewsletter" runat="server" placeholder="Enter your email here" TextMode="Email"></asp:TextBox>
-                                <%--TODO: validate email add required field--%>
-                                <asp:RegularExpressionValidator ID="newsletterRegExValidator" runat="server" ErrorMessage="Invalid Email" ControlToValidate="textBoxEmailNewsletter"></asp:RegularExpressionValidator>
+                                <asp:RequiredFieldValidator ID="newsletterRequiredFieldValidator" runat="server" ErrorMessage="Campo obrigatório!" ControlToValidate="textBoxEmailNewsletter"></asp:RequiredFieldValidator>
+                                <br /> <%--TODO: fix one on top of the other leaving big balnk space--%>
+                                <asp:RegularExpressionValidator ID="newsletterRegExValidator" runat="server" ErrorMessage="Email inválido!" ControlToValidate="textBoxEmailNewsletter" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
                             </fieldset>
                             <asp:LinkButton class="btn btn-outline-secondary" ID="submitNewsletter" runat="server" OnClick="submitNewsletter_Click">Submit</asp:LinkButton>
                             <%--</form>--%>
