@@ -36,8 +36,8 @@
                         <asp:TextBox class="form-control" ID="textBoxMessage" Rows="3" runat="server" placeholder="Enter your message here" MaxLength="250" TextMode="MultiLine"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Campo obrigatório!" ControlToValidate="textBoxMessage"></asp:RequiredFieldValidator>
                     </div>
-                    <asp:LinkButton class="btn btn-dark text-white" ID="submit" runat="server" OnClick="submit_Click">Submit</asp:LinkButton>
-                    <input class="btn btn-dark text-white" id="reset" type="reset" value="Reset" />
+                    <asp:LinkButton class="btn btn-dark text-white" ID="submitContacts" runat="server" OnClick="submit_Click">Submit</asp:LinkButton>
+                    <input class="btn btn-dark text-white" id="resetContacts" type="reset" value="Reset" />
                     <%--</form>--%>
                 </div>
             </div>

@@ -35,7 +35,7 @@
                             </li>
                         </ul>
                         <a class="btn navbar-btn btn-dark ml-2 text-white">Sign in</a>
-                        <a class="btn navbar-btn btn-dark ml-2 text-white">Sign up</a>
+                        <asp:HyperLink  class="btn navbar-btn btn-dark ml-2 text-white" ID="signup" runat="server" NavigateUrl="~/frontend/signup.aspx">Sign Up</asp:HyperLink>
                     </div>
                 </div>
             </nav>
