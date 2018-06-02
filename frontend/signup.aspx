@@ -16,25 +16,35 @@
                             <div class="form-group">
                                 <label>Name</label>
                                 <%--<input type="text" class="form-control" placeholder="Enter your name here">--%>
-                                <asp:TextBox class="form-control" ID="textBoxName" runat="server" placeholder="Enter your name here"></asp:TextBox>
+                                <asp:textbox class="form-control" id="textBoxName" runat="server" placeholder="Minimum 3 letters"></asp:textbox>
+                                <asp:regularexpressionvalidator runat="server" errormessage="Invalid name!" controltovalidate="textBoxName" validationexpression="^[A-Za-z]{3,}\s[A-Za-z\s]*[A-Za-z]$"></asp:regularexpressionvalidator>
                             </div>
                             <div class="form-group">
                                 <label>Username</label>
                                 <%--<input type="text" class="form-control" placeholder="Enter your username here">--%>
-                                <asp:TextBox class="form-control" ID="textBoxUsername" runat="server" placeholder="Enter your username here" TextMode="SingleLine"></asp:TextBox>
+                                <asp:textbox class="form-control" id="textBoxUsername" runat="server" placeholder="Minimum 8 chars" textmode="SingleLine"></asp:textbox>
+                                <asp:requiredfieldvalidator runat="server" errormessage="Required field!" controltovalidate="textBoxUsername"></asp:requiredfieldvalidator>
+                                &nbsp;&nbsp;&nbsp;
+                                <asp:regularexpressionvalidator runat="server" errormessage="Invalid username!" validationexpression="^\w{8,}$" ControlToValidate="textBoxUsername"></asp:regularexpressionvalidator>
                             </div>
                             <div class="form-group">
                                 <label>Password</label>
                                 <%--<input type="password" class="form-control" placeholder="Enter your password here">--%>
-                                <asp:TextBox class="form-control" ID="textBoxPassword" runat="server" placeholder="Enter your password here" TextMode="Password"></asp:TextBox>
+                                <asp:textbox class="form-control" id="textBoxPassword" runat="server" placeholder="Minimum 8 chars" textmode="Password"></asp:textbox>
+                                <asp:requiredfieldvalidator runat="server" errormessage="Required field!" ControlToValidate="textBoxPassword"></asp:requiredfieldvalidator>
+                                &nbsp;&nbsp;&nbsp;
+                                <asp:regularexpressionvalidator runat="server" errormessage="Invalid password!" ControlToValidate="textBoxPassword" ValidationExpression="^[^\s].*[^\s]$"></asp:regularexpressionvalidator>
                             </div>
                             <div class="form-group">
                                 <label>Email address</label>
                                 <%--<input type="email" class="form-control" placeholder="Enter your email here">--%>
-                                <asp:TextBox class="form-control" ID="textBoxEmail" runat="server" placeholder="Enter your email here" TextMode="Email"></asp:TextBox>
+                                <asp:textbox class="form-control" id="textBoxEmail" runat="server" placeholder="Enter your email here" textmode="Email"></asp:textbox>
+                                <asp:requiredfieldvalidator runat="server" errormessage="Required field!" ControlToValidate="textBoxEmail"></asp:requiredfieldvalidator>
+                                &nbsp;&nbsp;&nbsp;
+                                <asp:regularexpressionvalidator runat="server" errormessage="Invalid email!" ControlToValidate="textBoxEmail" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:regularexpressionvalidator>
                             </div>
                             <%--<button type="submit" class="btn btn-secondary">Login</button>--%>
-                            <asp:LinkButton class="btn btn-secondary" ID="submitSignup" runat="server" OnClick="submitSignup_Click">Submit</asp:LinkButton>
+                            <asp:linkbutton class="btn btn-secondary" id="submitSignup" runat="server" onclick="submitSignup_Click">Submit</asp:linkbutton>
                             <%--</form>--%>
                              &nbsp;&nbsp;&nbsp;
                             <input class="btn btn-secondary" id="resetSignup" type="reset" value="Reset" />
