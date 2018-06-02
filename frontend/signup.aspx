@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/master-page-front-end.master" AutoEventWireup="true" CodeFile="signup.aspx.cs" Inherits="frontend_signup" %>
-
+<%--TODO: add confirm password--%>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
@@ -17,7 +17,9 @@
                                 <label>Name</label>
                                 <%--<input type="text" class="form-control" placeholder="Enter your name here">--%>
                                 <asp:textbox class="form-control" id="textBoxName" runat="server" placeholder="Minimum 3 letters"></asp:textbox>
-                                <asp:regularexpressionvalidator runat="server" errormessage="Invalid name!" controltovalidate="textBoxName" validationexpression="^[A-Za-z]{3,}\s[A-Za-z\s]*[A-Za-z]$"></asp:regularexpressionvalidator>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Required field!" ControlToValidate="textBoxName"></asp:RequiredFieldValidator>
+                                &nbsp;&nbsp;&nbsp;
+                                <asp:regularexpressionvalidator runat="server" errormessage="Invalid name!" controltovalidate="textBoxName" validationexpression="^[A-Za-z]{2,}[A-Za-z\s]*[A-Za-z]$"></asp:regularexpressionvalidator>
                             </div>
                             <div class="form-group">
                                 <label>Username</label>
