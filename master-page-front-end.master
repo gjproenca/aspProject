@@ -11,7 +11,7 @@
     <!-- Bootstrap CSS -->
     <link href="content/bootstrap.css" rel="stylesheet" type="text/css" />
     <link href="css/styleSheet.css" rel="stylesheet" />
-    <title>Hello, world!</title>
+    <title>webwarehouse13</title>
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -21,7 +21,7 @@
         <div>
             <nav class="navbar navbar-expand-md bg-primary navbar-dark">
                 <div class="container">
-                    <asp:HyperLink class="navbar-brand" ID="HyperLink1" runat="server" NavigateUrl="~/default.aspx">Navbar-brand</asp:HyperLink>
+                    <asp:HyperLink class="navbar-brand" ID="HyperLink1" runat="server" NavigateUrl="~/default.aspx">webwarehouse13</asp:HyperLink>
                     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -47,7 +47,7 @@
                 <div class="container">
                     <div class="row text-center">
                         <div class="mt-4 col-md-4">
-                            <h2 class="mb-4 text-secondary">Pingendo</h2>
+                            <h2 class="mb-4 text-secondary">webwarehouse13</h2>
                             <p class="text-white">A company for whatever you may need, from website prototyping to publishing</p>
                         </div>
                         <div class="mt-4 col-md-4">

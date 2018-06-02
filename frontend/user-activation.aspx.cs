@@ -37,14 +37,13 @@ public partial class frontend_user_activation : System.Web.UI.Page
         {
             if (dv.Count == 0)
             {
-                ClientScript.RegisterStartupScript(GetType(), "alert", "alert('Are you sure you inserted the activation code correctly?');", true);
+                ClientScript.RegisterStartupScript(GetType(), "alert", "alert('No matches found, user may be already active or code was inserted incorrectly!');", true);
                 conn.Close();
             }
             else if (dv.Count != 0)
             {
                 conn.Close();
                 idUser = dt.Rows[0]["IDUser"].ToString();
-                // Label2.Text = idutilizador.ToString();
                 conn.Open();
                 string updatequery = "UPDATE [User] SET [Active] = 1 WHERE [IDUser] = @idUser";
                 SqlCommand con = new SqlCommand(updatequery, conn);
@@ -69,7 +68,9 @@ public partial class frontend_user_activation : System.Web.UI.Page
         }
         catch (Exception ex)
         {
+            //FIXME: fix redirect
             Response.Write("ERRO:" + ex.ToString());
+            //Response.Redirect("~/frontend/error.aspx");
         }
     }
 }

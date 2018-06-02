@@ -76,13 +76,33 @@ public partial class frontend_signup : System.Web.UI.Page
 
             using (MailMessage mm = new MailMessage("webwarehouse13@gmail.com", textBoxEmail.Text))
             {
-                mm.Subject = "Activação da Conta Do Site XX";
-                string body = "Caro(a) " + textBoxName.Text.Trim() + ",";
-                body += "<br /><br />Por favor copie o seguinte código e no site visite a página de ativação de conta.";
+                mm.Subject = "Thank you for signing up";
+                string body = "Dear " + textBoxName.Text.Trim() + ", we're happy to have you on our team,";
+                body += "<br /><br />Please wait until one of our administrators activates your account.";
+                //body += String.Format("<a href='{0}/frontend.aspx'>Link</a>", HttpContext.Current.Request.Url.Host);
+                body += "<br /><br />Many thanks webwarehouse13.";
+                mm.Body = body;
+                mm.IsBodyHtml = true;
+                SmtpClient smtp = new SmtpClient();
+                smtp.Host = "smtp.gmail.com";
+                smtp.EnableSsl = true;
+                NetworkCredential NetworkCred = new NetworkCredential("webwarehouse13@gmail.com", "Ab-123456");
+                smtp.UseDefaultCredentials = true;
+                smtp.Credentials = NetworkCred;
+                smtp.Port = 587;
+                smtp.Send(mm);
+            }
+
+            using (MailMessage mm = new MailMessage("webwarehouse13@gmail.com", "webwarehouse13@gmail.com"))
+            {
+                mm.Subject = "User activation request";
+                string body = "Username: " + textBoxUsername.Text;
+                body += "<br /><br />Email: " + textBoxEmail.Text;
                 //body += String.Format("<a href='{0}/frontend.aspx'>Link</a>", HttpContext.Current.Request.Url.Host);
                 body += "<br /><br />Code: ";
                 body += activationCode;
-                body += "<br /><br />Muito Obrigado em nome do site XX";
+                body += "<br /><br />Please be carefull when activating an account.";
+                body += "<br /><br />Many thanks webwarehouse13.";
                 mm.Body = body;
                 mm.IsBodyHtml = true;
                 SmtpClient smtp = new SmtpClient();
