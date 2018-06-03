@@ -1,0 +1,95 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="master-page-user.master.cs" Inherits="master_page_user" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="content/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="css/styleSheet.css" rel="stylesheet" />
+    <title>webwarehouse13</title>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <nav class="navbar navbar-expand-md bg-primary navbar-dark">
+                <div class="container">
+                    <asp:HyperLink class="navbar-brand" ID="HyperLink1" runat="server" NavigateUrl="~/default.aspx">webwarehouse13</asp:HyperLink>
+                    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse text-center justify-content-end" id="navbar2SupportedContent">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Bookmarks</a>
+                            </li>
+                            <li class="nav-item">
+                                <asp:HyperLink class="nav-link" ID="contacts" runat="server" NavigateUrl="~/frontend/contacts.aspx">Contacts</asp:HyperLink>
+                            </li>
+                        </ul>
+                        &nbsp;<asp:HyperLink class="btn navbar-btn btn-dark ml-2 text-white" ID="signup" runat="server" NavigateUrl="~/frontend/signup.aspx">Log out</asp:HyperLink>
+                    </div>
+                </div>
+            </nav>
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+
+            <div class="bg-dark text-white">
+                <div class="container">
+                    <div class="row text-center">
+                        <div class="mt-4 col-md-4">
+                            <h2 class="mb-4 text-secondary">webwarehouse13</h2>
+                            <p class="text-white">Access your files anywhere at any time</p>
+                        </div>
+                        <div class="mt-4 col-md-4">
+                            <h2 class="mb-4 text-secondary">Mapsite</h2>
+                            <ul class="list-unstyled">
+                                <a href="#" class="text-white">Home</a>
+                                <br>
+                                <a href="#" class="text-white">About us</a>
+                                <br>
+                                <a href="#" class="text-white">Our services</a>
+                                <br>
+                                <a href="#" class="text-white">Stories</a>
+                            </ul>
+                        </div>
+                        <div class="mt-4 col-md-4">
+                            <h2 class="mb-4">Contact</h2>
+                            <p>
+                                <a href="tel:+246 - 542 550 5462" class="text-white">
+                                    <i class="fa d-inline  text-secondary fa-phone"></i>+246 - 542 550 5462</a>
+                            </p>
+                            <p>
+                                <a href="mailto:info@pingendo.com" class="text-white">webwarehouse13@gmail.com</a>
+                            </p>
+                            <p>
+                                Piccadilly Gardens, M60 1AY,
+                                <br />
+                                Manchester, UK
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 mt-3">
+                            <p class="text-center text-white">© Copyright 2017 Gonçalo Proença - All rights reserved. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="scripts/jquery-3.3.1.slim.min.js"></script>
+        <script src="scripts/popper.min.js"></script>
+        <script src="scripts/bootstrap.min.js"></script>
+    </form>
+</body>
+</html>

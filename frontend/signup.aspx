@@ -11,7 +11,6 @@
                     <div class="card text-white p-5 bg-primary">
                         <div class="card-body">
                             <h1 class="mb-4">Sign Up</h1>
-                            <%--<form action="https://formspree.io/YOUREMAILHERE">--%>
                             <div class="form-group">
                                 <label>Name</label>
                                 <%--<input type="text" class="form-control" placeholder="Enter your name here">--%>
@@ -32,7 +31,7 @@
                                 <asp:TextBox class="form-control" ID="textBoxPassword" runat="server" placeholder="Minimum 8 chars" TextMode="Password"></asp:TextBox>
                                 <asp:RequiredFieldValidator runat="server" ErrorMessage="Required field!" ControlToValidate="textBoxPassword"></asp:RequiredFieldValidator>
                                 &nbsp;&nbsp;&nbsp;
-                                <asp:RegularExpressionValidator runat="server" ErrorMessage="Invalid password!" ControlToValidate="textBoxPassword" ValidationExpression="^[^\s].*[^\s]$"></asp:RegularExpressionValidator>
+                                <asp:RegularExpressionValidator runat="server" ErrorMessage="Invalid password!" ControlToValidate="textBoxPassword" ValidationExpression="^[^\s].{6,}[^\s]$"></asp:RegularExpressionValidator>
                             </div>
                             <div class="form-group">
                                 <label>Confirm password</label>
@@ -49,7 +48,6 @@
                                 <asp:RegularExpressionValidator runat="server" ErrorMessage="Invalid email!" ControlToValidate="textBoxEmail" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
                             </div>
                             <asp:LinkButton class="btn btn-secondary" ID="submitSignup" runat="server" OnClick="submitSignup_Click">Submit</asp:LinkButton>
-                            <%--</form>--%>
                              &nbsp;&nbsp;&nbsp;
                             <input class="btn btn-secondary" id="resetSignup" type="reset" value="Reset" />
                         </div>

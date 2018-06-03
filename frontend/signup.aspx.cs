@@ -50,7 +50,6 @@ public partial class frontend_signup : System.Web.UI.Page
                     Response.Redirect("~/frontend/success.aspx");
                     break;
             }
-            //TODO: AddedControl client scrpt to each line so i can add response write to success page 
         }
     }
 

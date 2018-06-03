@@ -34,8 +34,8 @@
                                 <asp:HyperLink class="nav-link" ID="contacts" runat="server" NavigateUrl="~/frontend/contacts.aspx">Contacts</asp:HyperLink>
                             </li>
                         </ul>
-                        <a class="btn navbar-btn btn-dark ml-2 text-white">Sign in</a>
-                        <asp:HyperLink  class="btn navbar-btn btn-dark ml-2 text-white" ID="signup" runat="server" NavigateUrl="~/frontend/signup.aspx">Sign Up</asp:HyperLink>
+                        <asp:HyperLink class="btn navbar-btn btn-dark ml-2 text-white" ID="signin" runat="server" NavigateUrl="~/frontend/signin.aspx">Sign In</asp:HyperLink>
+                        <asp:HyperLink class="btn navbar-btn btn-dark ml-2 text-white" ID="signup" runat="server" NavigateUrl="~/frontend/signup.aspx">Sign Up</asp:HyperLink>
                     </div>
                 </div>
             </nav>
@@ -48,7 +48,7 @@
                     <div class="row text-center">
                         <div class="mt-4 col-md-4">
                             <h2 class="mb-4 text-secondary">webwarehouse13</h2>
-                            <p class="text-white">A company for whatever you may need, from website prototyping to publishing</p>
+                            <p class="text-white">Access your files anywhere at any time</p>
                         </div>
                         <div class="mt-4 col-md-4">
                             <h2 class="mb-4 text-secondary">Mapsite</h2>
@@ -69,12 +69,12 @@
                                     <i class="fa d-inline  text-secondary fa-phone"></i>+246 - 542 550 5462</a>
                             </p>
                             <p>
-                                <a href="mailto:info@pingendo.com" class="text-white">
-                                    <i class="fa d-inline  text-secondary fa-envelope-o"></i>info@pingendo.com</a>
+                                <a href="mailto:info@pingendo.com" class="text-white">webwarehouse13@gmail.com</a>
                             </p>
                             <p>
-                                <a href="https://goo.gl/maps/AUq7b9W7yYJ2" class="text-white" target="_blank">
-                                    <i class="fa d-inline  fa-map-marker text-secondary"></i>365 Park Street, NY</a>
+                                Piccadilly Gardens, M60 1AY,
+                                <br />
+                                Manchester, UK
                             </p>
                         </div>
                     </div>

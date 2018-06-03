@@ -40,7 +40,7 @@ public partial class frontend_user_activation : System.Web.UI.Page
                 ClientScript.RegisterStartupScript(GetType(), "alert", "alert('No matches found, user may be already active or code was inserted incorrectly!');", true);
                 conn.Close();
             }
-            else if (dv.Count != 0)
+            else
             {
                 conn.Close();
                 idUser = dt.Rows[0]["IDUser"].ToString();
@@ -60,17 +60,16 @@ public partial class frontend_user_activation : System.Web.UI.Page
                 {
                     Response.Redirect("~/frontend/success.aspx");
                 }
-            }
-            else
-            {
-                ClientScript.RegisterStartupScript(GetType(), "alert", "alert('Activation failed!');", true);
+                else
+                {
+                    ClientScript.RegisterStartupScript(GetType(), "alert", "alert('Activation failed, please try again');", true);
+                }
             }
         }
         catch (Exception ex)
         {
-            //FIXME: fix redirect
-            Response.Write("ERRO:" + ex.ToString());
-            //Response.Redirect("~/frontend/error.aspx");
+            //Response.Write("ERRO:" + ex.ToString());
+            ClientScript.RegisterStartupScript(GetType(), "alert", "alert('Activation failed, please try again');", true);
         }
     }
 }
