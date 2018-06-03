@@ -16,9 +16,9 @@
                                 <asp:TextBox class="form-control" ID="textBoxCode" runat="server" placeholder="Paste the activation code here"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Required field!" ControlToValidate="textBoxCode"></asp:RequiredFieldValidator>
                             </div>
-                            <asp:LinkButton  class="btn btn-secondary" ID="submitCode" runat="server" OnClick="submitCode_Click">Submit</asp:LinkButton>
+                            <asp:LinkButton  class="btn btn-dark text-white" ID="submitCode" runat="server" OnClick="submitCode_Click">Submit</asp:LinkButton>
                             &nbsp;&nbsp;&nbsp;
-                            <input class="btn btn-secondary" id="resetSignup" type="reset" value="Reset" />
+                            <input class="btn btn-dark text-white" id="resetSignup" type="reset" value="Reset" />
                         </div>
                     </div>
                 </div>

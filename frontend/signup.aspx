@@ -47,9 +47,9 @@
                                 &nbsp;&nbsp;&nbsp;
                                 <asp:RegularExpressionValidator runat="server" ErrorMessage="Invalid email!" ControlToValidate="textBoxEmail" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
                             </div>
-                            <asp:LinkButton class="btn btn-secondary" ID="submitSignup" runat="server" OnClick="submitSignup_Click">Submit</asp:LinkButton>
+                            <asp:LinkButton class="btn btn-dark text-white" ID="submitSignup" runat="server" OnClick="submitSignup_Click">Submit</asp:LinkButton>
                              &nbsp;&nbsp;&nbsp;
-                            <input class="btn btn-secondary" id="resetSignup" type="reset" value="Reset" />
+                            <input class="btn btn-dark text-white" id="resetSignup" type="reset" value="Reset" />
                         </div>
                     </div>
                 </div>
