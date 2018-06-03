@@ -7,7 +7,7 @@
         <div class="container py-5">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="display-3 mb-4 text-white">Welcome</h1>
+                    <h1 class="display-3 mb-4 text-white">Bem-vindo</h1>
                 </div>
             </div>
         </div>
@@ -17,11 +17,11 @@
         <div class="container">
             <div class="row mb-5">
                 <div class="col-md-7">
-                    <h2 class="text-primary">Faster than a bullet</h2>
+                    <h2 class="text-primary">Mais rápidos que uma bala</h2>
                     <p class="">
-                        Access your files anywhere, everyhwere at anytime.
+                        Aceda aos seus ficheiros em qualquer lugar e a qualquer hora
                         <br />
-                        Our cloud services are the fastest on the market, wiht up to 1GP/s download and upload.
+                        Os nossos serviços de hospedagem são os mais rápidos do mercado, com velocidades de envio/descarga a chegar a 1GB/s.
                     </p>
                 </div>
                 <div class="col-md-5 align-self-center">
@@ -33,11 +33,11 @@
                     <img class="img-fluid d-block mb-4 w-100 img-thumbnail" src="./images/security.jpg">
                 </div>
                 <div class="col-md-7">
-                    <h2 class="text-primary pt-3">Security</h2>
+                    <h2 class="text-primary pt-3">Segurança</h2>
                     <p class="">
-                        Your files are secure with us, we encrypt all of your data with Triple DES.
+                        Os seus ficheiros estão seguros conosco, toda a nossa informação é encriptada com DES (Data Encryption Standard) triplo.
                         <br />
-                        Triple DES uses three individual keys with 56 bits each. The total key length adds up to 168 bits, meaning that nobody will get access to your files but you.
+                        DES (Data Encryption Standard) triplo uses três chaves individuais de 56 bits cada. O comprimento total da chave é de 168 bits, o que significa que apenas você terá acesso aos seus ficheiros.
                     </p>
                 </div>
             </div>

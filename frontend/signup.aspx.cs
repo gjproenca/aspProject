@@ -40,10 +40,10 @@ public partial class frontend_signup : System.Web.UI.Page
             switch (userId)
             {
                 case -1:
-                    ClientScript.RegisterStartupScript(GetType(), "alert", "alert('Username already exists!');", true);
+                    ClientScript.RegisterStartupScript(GetType(), "alert", "alert('Nome de utilizador já existente!');", true);
                     break;
                 case -2:
-                    ClientScript.RegisterStartupScript(GetType(), "alert", "alert('This email address already exists if you forgot your password click on Forgot my password');", true);
+                    ClientScript.RegisterStartupScript(GetType(), "alert", "alert('Endereço de e-mail já existente, se quiser recuperar a password clique em Recuperar Senha);", true);
                     break;
                 default:
                     SendEmail(userId);
@@ -75,11 +75,11 @@ public partial class frontend_signup : System.Web.UI.Page
 
             using (MailMessage mm = new MailMessage("webwarehouse13@gmail.com", textBoxEmail.Text))
             {
-                mm.Subject = "Thank you for signing up";
-                string body = "Dear " + textBoxName.Text.Trim() + ", we're happy to have you on our team,";
-                body += "<br /><br />Please wait until one of our administrators activates your account.";
+                mm.Subject = "Obrigado por se ter registado";
+                string body = "Caro(a) " + textBoxName.Text.Trim() + ", estamos felizes em tê-lo na nossa equipa,";
+                body += "<br /><br /Por favor aguarde até um dos nossos administradores ativar a sua conta.";
                 //body += String.Format("<a href='{0}/frontend.aspx'>Link</a>", HttpContext.Current.Request.Url.Host);
-                body += "<br /><br />Many thanks webwarehouse13.";
+                body += "<br /><br />Muito obrigado em nome da Webware.";
                 mm.Body = body;
                 mm.IsBodyHtml = true;
                 SmtpClient smtp = new SmtpClient();
@@ -94,14 +94,14 @@ public partial class frontend_signup : System.Web.UI.Page
 
             using (MailMessage mm = new MailMessage("webwarehouse13@gmail.com", "webwarehouse13@gmail.com"))
             {
-                mm.Subject = "User activation request";
-                string body = "Username: " + textBoxUsername.Text;
-                body += "<br /><br />Email: " + textBoxEmail.Text;
+                mm.Subject = "Requesito de ativação de conta";
+                string body = "Nome de utilizador: " + textBoxUsername.Text;
+                body += "<br /><br />Endereço de email: " + textBoxEmail.Text;
                 //body += String.Format("<a href='{0}/frontend.aspx'>Link</a>", HttpContext.Current.Request.Url.Host);
-                body += "<br /><br />Code: ";
+                body += "<br /><br />Código: ";
                 body += activationCode;
-                body += "<br /><br />Please be carefull when activating an account.";
-                body += "<br /><br />Many thanks webwarehouse13.";
+                body += "<br /><br />Por favor, tenha cuidado ao ativar uma conta.";
+                body += "<br /><br />Muito obrigado Webware.";
                 mm.Body = body;
                 mm.IsBodyHtml = true;
                 SmtpClient smtp = new SmtpClient();

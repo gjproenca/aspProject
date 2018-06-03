@@ -10,46 +10,45 @@
                 <div class="col-md-6">
                     <div class="card text-white p-5 bg-primary">
                         <div class="card-body">
-                            <h1 class="mb-4">Sign Up</h1>
+                            <h1 class="mb-4">Registar</h1>
                             <div class="form-group">
-                                <label>Name</label>
-                                <%--<input type="text" class="form-control" placeholder="Enter your name here">--%>
-                                <asp:TextBox class="form-control" ID="textBoxName" runat="server" placeholder="Minimum 3 letters"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Required field!" ControlToValidate="textBoxName"></asp:RequiredFieldValidator>
+                                <label>Nome</label>
+                                <asp:TextBox class="form-control" ID="textBoxName" runat="server" placeholder="Mínimo 3 carateres"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Campo obrigatório!" ControlToValidate="textBoxName"></asp:RequiredFieldValidator>
                                 &nbsp;&nbsp;&nbsp;
-                                <asp:RegularExpressionValidator runat="server" ErrorMessage="Invalid name!" ControlToValidate="textBoxName" ValidationExpression="^[A-Za-z]{2,}[A-Za-z\s]*[A-Za-z]$"></asp:RegularExpressionValidator>
+                                <asp:RegularExpressionValidator runat="server" ErrorMessage="Nome inválido!" ControlToValidate="textBoxName" ValidationExpression="^[A-Za-z]{2,}[A-Za-z\s]*[A-Za-z]$"></asp:RegularExpressionValidator>
                             </div>
                             <div class="form-group">
-                                <label>Username</label>
-                                <asp:TextBox class="form-control" ID="textBoxUsername" runat="server" placeholder="Minimum 8 chars" TextMode="SingleLine"></asp:TextBox>
-                                <asp:RequiredFieldValidator runat="server" ErrorMessage="Required field!" ControlToValidate="textBoxUsername"></asp:RequiredFieldValidator>
+                                <label>Nome de utilizador</label>
+                                <asp:TextBox class="form-control" ID="textBoxUsername" runat="server" placeholder="Mínimo 8 carateres" TextMode="SingleLine"></asp:TextBox>
+                                <asp:RequiredFieldValidator runat="server" ErrorMessage="Campo obrigatório!" ControlToValidate="textBoxUsername"></asp:RequiredFieldValidator>
                                 &nbsp;&nbsp;&nbsp;
-                                <asp:RegularExpressionValidator runat="server" ErrorMessage="Invalid username!" ValidationExpression="^\w{8,}$" ControlToValidate="textBoxUsername"></asp:RegularExpressionValidator>
+                                <asp:RegularExpressionValidator runat="server" ErrorMessage="Nome de utilizador inválido!" ValidationExpression="^\w{8,}$" ControlToValidate="textBoxUsername"></asp:RegularExpressionValidator>
                             </div>
                             <div class="form-group">
-                                <label>Password</label>
-                                <asp:TextBox class="form-control" ID="textBoxPassword" runat="server" placeholder="Minimum 8 chars" TextMode="Password"></asp:TextBox>
-                                <asp:RequiredFieldValidator runat="server" ErrorMessage="Required field!" ControlToValidate="textBoxPassword"></asp:RequiredFieldValidator>
+                                <label>Senha</label>
+                                <asp:TextBox class="form-control" ID="textBoxPassword" runat="server" placeholder="Mínimo 8 carateres" TextMode="Password"></asp:TextBox>
+                                <asp:RequiredFieldValidator runat="server" ErrorMessage="Campo obrigatório!" ControlToValidate="textBoxPassword"></asp:RequiredFieldValidator>
                                 &nbsp;&nbsp;&nbsp;
-                                <asp:RegularExpressionValidator runat="server" ErrorMessage="Invalid password!" ControlToValidate="textBoxPassword" ValidationExpression="^[^\s].{6,}[^\s]$"></asp:RegularExpressionValidator>
+                                <asp:RegularExpressionValidator runat="server" ErrorMessage="Senha inválida!" ControlToValidate="textBoxPassword" ValidationExpression="^[^\s].{6,}[^\s]$"></asp:RegularExpressionValidator>
                             </div>
                             <div class="form-group">
-                                <label>Confirm password</label>
-                                <asp:TextBox class="form-control" ID="textBoxConfirmPassword" runat="server" placeholder="Minimum 8 chars" TextMode="Password"></asp:TextBox>
-                                <asp:RequiredFieldValidator runat="server" ErrorMessage="Required field!" ControlToValidate="textBoxConfirmPassword"></asp:RequiredFieldValidator>
+                                <label>Confirmar senha</label>
+                                <asp:TextBox class="form-control" ID="textBoxConfirmPassword" runat="server" placeholder="Mínimo 8 carateres" TextMode="Password"></asp:TextBox>
+                                <asp:RequiredFieldValidator runat="server" ErrorMessage="Campo obrigatório!" ControlToValidate="textBoxConfirmPassword"></asp:RequiredFieldValidator>
                                 &nbsp;&nbsp;&nbsp;
-                                <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="Passwords don't match!" ControlToCompare="textBoxPassword" ControlToValidate="textBoxConfirmPassword"></asp:CompareValidator>
+                                <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="Senhas não coincidem!" ControlToCompare="textBoxPassword" ControlToValidate="textBoxConfirmPassword"></asp:CompareValidator>
                             </div>
                             <div class="form-group">
-                                <label>Email address</label>
-                                <asp:TextBox class="form-control" ID="textBoxEmail" runat="server" placeholder="Enter your email here" TextMode="Email"></asp:TextBox>
-                                <asp:RequiredFieldValidator runat="server" ErrorMessage="Required field!" ControlToValidate="textBoxEmail"></asp:RequiredFieldValidator>
+                                <label>Endereço de email</label>
+                                <asp:TextBox class="form-control" ID="textBoxEmail" runat="server" placeholder="Introduza o seu endereço de email" TextMode="Email"></asp:TextBox>
+                                <asp:RequiredFieldValidator runat="server" ErrorMessage="Campo obrigatório!" ControlToValidate="textBoxEmail"></asp:RequiredFieldValidator>
                                 &nbsp;&nbsp;&nbsp;
-                                <asp:RegularExpressionValidator runat="server" ErrorMessage="Invalid email!" ControlToValidate="textBoxEmail" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+                                <asp:RegularExpressionValidator runat="server" ErrorMessage="Endereço de email inválido!" ControlToValidate="textBoxEmail" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
                             </div>
-                            <asp:LinkButton class="btn btn-dark text-white" ID="submitSignup" runat="server" OnClick="submitSignup_Click">Submit</asp:LinkButton>
+                            <asp:LinkButton class="btn btn-dark text-white" ID="submitSignup" runat="server" OnClick="submitSignup_Click">Submeter</asp:LinkButton>
                              &nbsp;&nbsp;&nbsp;
-                            <input class="btn btn-dark text-white" id="resetSignup" type="reset" value="Reset" />
+                            <input class="btn btn-dark text-white" id="resetSignup" type="reset" value="Limpar" />
                         </div>
                     </div>
                 </div>

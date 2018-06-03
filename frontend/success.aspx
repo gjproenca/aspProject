@@ -10,8 +10,8 @@
             <div class="col-md-8">
                 <div class="card border-success">
                     <div class="card-body text-success">
-                        <h3 class="card-title">Success!</h3>
-                        <p class="card-text">You will be automatically redirected in 5 seconds.</p>
+                        <h3 class="card-title">Sucesso!</h3>
+                        <p class="card-text">Você será redirecionado automaticamente dentro de 5 segundos</p>
                     </div>
                 </div>
             </div>

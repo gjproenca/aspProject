@@ -36,7 +36,7 @@ public partial class backend_admin_activation : System.Web.UI.Page
         {
             if (dv.Count == 0)
             {
-                ClientScript.RegisterStartupScript(GetType(), "alert", "alert('No matches found, user may be already active or code was inserted incorrectly!');", true);
+                ClientScript.RegisterStartupScript(GetType(), "alert", "alert('Nenhuma correspondência encontrada, o utilizador pode já estar ativo ou, o código foi inserido incorretamente!');", true);
                 conn.Close();
             }
             else
@@ -57,18 +57,18 @@ public partial class backend_admin_activation : System.Web.UI.Page
                 conn.Close();
                 if ((rowsAffected == 1) && (rowsAffected1 == 1))
                 {
-                    ClientScript.RegisterStartupScript(GetType(), "alert", "alert('Activation successfull!');", true);
+                    ClientScript.RegisterStartupScript(GetType(), "alert", "alert('Conta ativada com sucesso!');", true);
                 }
                 else
                 {
-                    ClientScript.RegisterStartupScript(GetType(), "alert", "alert('Activation failed, please try again');", true);
+                    ClientScript.RegisterStartupScript(GetType(), "alert", "alert('Não foi possível ativar a conta!');", true);
                 }
             }
         }
         catch (Exception ex)
         {
             //Response.Write("ERRO:" + ex.ToString());
-            ClientScript.RegisterStartupScript(GetType(), "alert", "alert('Error!');", true);
+            ClientScript.RegisterStartupScript(GetType(), "alert", "alert('Erro!');", true);
         }
     }
 }

@@ -12,7 +12,7 @@
     <!-- Bootstrap CSS -->
     <link href="/content/bootstrap.css" rel="stylesheet" type="text/css" />
     <link href="/css/styleSheet.css" rel="stylesheet" />
-    <title>webwarehouse13</title>
+    <title>Webware</title>
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -22,7 +22,7 @@
         <div>
             <nav class="navbar navbar-expand-md bg-primary navbar-dark">
                 <div class="container">
-                    <asp:HyperLink class="navbar-brand" ID="HyperLink1" runat="server" NavigateUrl="~/default.aspx">webwarehouse13</asp:HyperLink>
+                    <asp:HyperLink class="navbar-brand" ID="HyperLink1" runat="server" NavigateUrl="~/default.aspx">Webware</asp:HyperLink>
                     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -32,11 +32,11 @@
                                 <a class="nav-link" href="#">Bookmarks</a>
                             </li>
                             <li class="nav-item">
-                                <asp:HyperLink class="nav-link" ID="contacts" runat="server" NavigateUrl="~/frontend/contact.aspx">Contacts</asp:HyperLink>
+                                <asp:HyperLink class="nav-link" ID="contacts" runat="server" NavigateUrl="~/frontend/contact.aspx">Contactos</asp:HyperLink>
                             </li>
                         </ul>
-                        <asp:HyperLink class="btn navbar-btn btn-dark ml-2 text-white" ID="signin" runat="server" NavigateUrl="~/frontend/signin.aspx">Sign In</asp:HyperLink>
-                        <asp:HyperLink class="btn navbar-btn btn-dark ml-2 text-white" ID="signup" runat="server" NavigateUrl="~/frontend/signup.aspx">Sign Up</asp:HyperLink>
+                        <asp:HyperLink class="btn navbar-btn btn-dark ml-2 text-white" ID="signin" runat="server" NavigateUrl="~/frontend/signin.aspx">Entrar</asp:HyperLink>
+                        <asp:HyperLink class="btn navbar-btn btn-dark ml-2 text-white" ID="signup" runat="server" NavigateUrl="~/frontend/signup.aspx">Registar</asp:HyperLink>
                     </div>
                 </div>
             </nav>
@@ -48,13 +48,13 @@
                 <div class="container">
                     <div class="row text-center">
                         <div class="mt-4 col-md-4">
-                            <h2 class="mb-4 text-secondary">webwarehouse13</h2>
-                            <p class="text-white">Access your files anywhere at any time</p>
+                            <h2 class="mb-4 text-secondary">Webware</h2>
+                            <p class="text-white">Aceda aos seus ficheiros a qualquer altura, em qualquer lugar</p>
                         </div>
                         <div class="mt-4 col-md-4">
-                            <h2 class="mb-4 text-secondary">Mapsite</h2>
+                            <h2 class="mb-4 text-secondary">Mapa</h2>
                             <ul class="list-unstyled">
-                                <a href="#" class="text-white">Home</a>
+                                <a href="/default.aspx" class="text-white">Início</a>
                                 <br>
                                 <a href="#" class="text-white">About us</a>
                                 <br>
@@ -64,18 +64,18 @@
                             </ul>
                         </div>
                         <div class="mt-4 col-md-4">
-                            <h2 class="mb-4">Contact</h2>
+                            <h2 class="mb-4">Contactos</h2>
                             <p>
-                                <a href="tel:+246 - 542 550 5462" class="text-white">
-                                    <i class="fa d-inline  text-secondary fa-phone"></i>+246 - 542 550 5462</a>
+                                <a href="tel:213 432 534" class="text-white">
+                                    <i class="fa d-inline  text-secondary fa-phone"></i>213 432 534</a>
                             </p>
                             <p>
                                 <a href="mailto:webwarehouse13@gmail.com" class="text-white">webwarehouse13@gmail.com</a>
                             </p>
                             <p>
-                                Piccadilly Gardens, M60 1AY,
+                                Av. Marquês de Tomar 91,
                                 <br />
-                                Manchester, UK
+                                1069-181 Lisboa, 1050-032 Lisboa
                             </p>
                         </div>
                     </div>

@@ -10,8 +10,8 @@
             <div class="col-md-8">
                 <div class="card border-danger">
                     <div class="card-body text-danger">
-                        <h3 class="card-title">Error!</h3>
-                        <p class="card-text">You will be automatically redirected in 5 seconds.</p>
+                        <h3 class="card-title">Erro!</h3>
+                        <p class="card-text">Você será redirecionado automaticamente dentro de 5 segundos</p>
                     </div>
                 </div>
             </div>

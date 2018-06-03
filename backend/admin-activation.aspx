@@ -10,15 +10,15 @@
                 <div class="col-md-6">
                     <div class="card text-white p-5 bg-primary">
                         <div class="card-body">
-                            <h1 class="mb-4">Activate account</h1>
+                            <h1 class="mb-4">Ativar contas</h1>
                             <div class="form-group">
-                                <label>Activation code</label>
-                                <asp:TextBox class="form-control" ID="textBoxCode" runat="server" placeholder="Paste the activation code here"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Required field!" ControlToValidate="textBoxCode"></asp:RequiredFieldValidator>
+                                <label>Código de ativação</label>
+                                <asp:TextBox class="form-control" ID="textBoxCode" runat="server" placeholder="Cole o código de ativação aqui"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Campo obrigatório!" ControlToValidate="textBoxCode"></asp:RequiredFieldValidator>
                             </div>
-                            <asp:LinkButton  class="btn btn-dark text-white" ID="submitCode" runat="server" OnClick="submitCode_Click">Submit</asp:LinkButton>
+                            <asp:LinkButton  class="btn btn-dark text-white" ID="submitCode" runat="server" OnClick="submitCode_Click">Submeter</asp:LinkButton>
                             &nbsp;&nbsp;&nbsp;
-                            <input class="btn btn-dark text-white" id="resetSignup" type="reset" value="Reset" />
+                            <input class="btn btn-dark text-white" id="resetSignup" type="reset" value="Limpar" />
                         </div>
                     </div>
                 </div>
