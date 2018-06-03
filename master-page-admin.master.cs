@@ -18,5 +18,6 @@ public partial class master_page_admin : System.Web.UI.MasterPage
     protected void signout_Click(object sender, EventArgs e)
     {
         Session["sessionIDAdmin"] = null;
+        Response.Redirect("~/default.aspx");
     }
 }
