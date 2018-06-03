@@ -9,8 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link href="content/bootstrap.css" rel="stylesheet" type="text/css" />
-    <link href="css/styleSheet.css" rel="stylesheet" />
+    <link href="/content/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="/css/styleSheet.css" rel="stylesheet" />
     <title>webwarehouse13</title>
 
     <asp:ContentPlaceHolder ID="head" runat="server">
@@ -31,10 +31,11 @@
                                 <a class="nav-link" href="#">Bookmarks</a>
                             </li>
                             <li class="nav-item">
-                                <asp:HyperLink class="nav-link" ID="contacts" runat="server" NavigateUrl="~/frontend/contacts.aspx">Contacts</asp:HyperLink>
+                                <asp:HyperLink class="nav-link" ID="contact" runat="server" NavigateUrl="~/frontend/user-contact.aspx">Contacts</asp:HyperLink>
                             </li>
                         </ul>
-                        &nbsp;<asp:HyperLink class="btn navbar-btn btn-dark ml-2 text-white" ID="signup" runat="server" NavigateUrl="~/frontend/signup.aspx">Log out</asp:HyperLink>
+                        &nbsp;
+                        <asp:LinkButton class="btn navbar-btn btn-dark ml-2 text-white" ID="signout" runat="server" OnClick="signout_Click">Sign out</asp:LinkButton>
                     </div>
                 </div>
             </nav>
@@ -68,7 +69,7 @@
                                     <i class="fa d-inline  text-secondary fa-phone"></i>+246 - 542 550 5462</a>
                             </p>
                             <p>
-                                <a href="mailto:info@pingendo.com" class="text-white">webwarehouse13@gmail.com</a>
+                                <a href="mailto:webwarehouse13@gmail.com" class="text-white">webwarehouse13@gmail.com</a>
                             </p>
                             <p>
                                 Piccadilly Gardens, M60 1AY,
@@ -87,9 +88,9 @@
         </div>
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="scripts/jquery-3.3.1.slim.min.js"></script>
-        <script src="scripts/popper.min.js"></script>
-        <script src="scripts/bootstrap.min.js"></script>
+        <script src="/scripts/jquery-3.3.1.slim.min.js"></script>
+        <script src="/scripts/popper.min.js"></script>
+        <script src="/scripts/bootstrap.min.js"></script>
     </form>
 </body>
 </html>

@@ -25,7 +25,6 @@
                                 &nbsp;&nbsp;&nbsp;
                                 <asp:RegularExpressionValidator runat="server" ErrorMessage="Invalid password!" ControlToValidate="textBoxPassword" ValidationExpression="^[^\s].{6,}[^\s]$"></asp:RegularExpressionValidator>
                             </div>
-                            <%--<asp:LinkButton class="btn btn-secondary" ID="submitSignup" runat="server" OnClick="submitSignup_Click">Submit</asp:LinkButton>--%>
                             <asp:LinkButton class="btn btn-secondary" ID="signin" runat="server" OnClick="signin_Click">Sign In</asp:LinkButton> 
                             &nbsp;&nbsp;&nbsp;
                             <input class="btn btn-secondary" id="resetSignin" type="reset" value="Reset" />

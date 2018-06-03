@@ -9,8 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link href="content/bootstrap.css" rel="stylesheet" type="text/css" />
-    <link href="css/styleSheet.css" rel="stylesheet" />
+    <link href="/content/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="/css/styleSheet.css" rel="stylesheet" />
     <title>webwarehouse13</title>
 
     <asp:ContentPlaceHolder ID="head" runat="server">
@@ -21,21 +21,20 @@
         <div>
             <nav class="navbar navbar-expand-md bg-primary navbar-dark">
                 <div class="container">
-                    <asp:HyperLink class="navbar-brand" ID="HyperLink1" runat="server" NavigateUrl="~/default.aspx">webwarehouse13</asp:HyperLink>
+                    <asp:HyperLink class="navbar-brand" ID="HyperLink1" runat="server" NavigateUrl="~/default.aspx">webwarehouse13 (backend)</asp:HyperLink>
                     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse text-center justify-content-end" id="navbar2SupportedContent">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Bookmarks</a>
+                                <asp:HyperLink class="nav-link" ID="activateUsers" runat="server" NavigateUrl="~/backend/admin-activation.aspx">Activate users</asp:HyperLink>
                             </li>
                             <li class="nav-item">
                                 <asp:HyperLink class="nav-link" ID="contacts" runat="server" NavigateUrl="~/frontend/contacts.aspx">Contacts</asp:HyperLink>
                             </li>
                         </ul>
-                        <asp:HyperLink class="btn navbar-btn btn-dark ml-2 text-white" ID="signin" runat="server" NavigateUrl="~/frontend/signin.aspx">Sign In</asp:HyperLink>
-                        <asp:HyperLink class="btn navbar-btn btn-dark ml-2 text-white" ID="signup" runat="server" NavigateUrl="~/frontend/signup.aspx">Sign Up</asp:HyperLink>
+                        <asp:LinkButton class="btn navbar-btn btn-dark ml-2 text-white" ID="signout" runat="server" OnClick="signout_Click">Sign out</asp:LinkButton>
                     </div>
                 </div>
             </nav>
@@ -69,7 +68,7 @@
                                     <i class="fa d-inline  text-secondary fa-phone"></i>+246 - 542 550 5462</a>
                             </p>
                             <p>
-                                <a href="mailto:info@pingendo.com" class="text-white">webwarehouse13@gmail.com</a>
+                                <a href="mailto:webwarehouse13@gmail.com" class="text-white">webwarehouse13@gmail.com</a>
                             </p>
                             <p>
                                 Piccadilly Gardens, M60 1AY,
@@ -88,9 +87,9 @@
         </div>
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="scripts/jquery-3.3.1.slim.min.js"></script>
-        <script src="scripts/popper.min.js"></script>
-        <script src="scripts/bootstrap.min.js"></script>
+        <script src="/scripts/jquery-3.3.1.slim.min.js"></script>
+        <script src="/scripts/popper.min.js"></script>
+        <script src="/scripts/bootstrap.min.js"></script>
     </form>
 </body>
 </html>
