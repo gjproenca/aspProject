@@ -18,27 +18,28 @@
                 <div class="col-md-6">
                     <h1>Contact us</h1>
                     <p>We would love to hear from you</p>
-                    <%--<form>--%>
                     <div class="form-group">
                         <label for="InputName">Your name</label>
-                        <asp:TextBox class="form-control" ID="textBoxName" runat="server" TextMode="SingleLine" placeholder="Enter your name here" MaxLength="100"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Campo obrigatório!" ControlToValidate="textBoxName"></asp:RequiredFieldValidator>
+                        <asp:textbox class="form-control" id="textBoxName" runat="server" textmode="SingleLine" placeholder="Enter your name here" maxlength="100"></asp:textbox>
+                        <asp:requiredfieldvalidator id="RequiredFieldValidator1" runat="server" errormessage="Required field!" controltovalidate="textBoxName"></asp:requiredfieldvalidator>
                     </div>
                     <div class="form-group">
                         <label for="InputEmail1">Email address</label>
-                        <asp:TextBox type="email" class="form-control" ID="textBoxEmail" runat="server" placeholder="Enter your email here" MaxLength="70"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Campo obrigatório!" ControlToValidate="textBoxEmail" CssClass="auto-style1"></asp:RequiredFieldValidator>
-                    &nbsp;&nbsp;&nbsp;
-                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Email inválido!" ControlToValidate="textBoxEmail" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+                        <asp:textbox type="email" class="form-control" id="textBoxEmail" runat="server" placeholder="Enter your email here" maxlength="70"></asp:textbox>
+                        <asp:requiredfieldvalidator id="RequiredFieldValidator2" runat="server" errormessage="Required field!" controltovalidate="textBoxEmail" cssclass="auto-style1"></asp:requiredfieldvalidator>
+                        &nbsp;&nbsp;&nbsp;
+                       
+                        <asp:regularexpressionvalidator id="RegularExpressionValidator1" runat="server" errormessage="Invalid email!" controltovalidate="textBoxEmail" validationexpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:regularexpressionvalidator>
                     </div>
                     <div class="form-group">
                         <label for="Textarea">Write here</label>
-                        <asp:TextBox class="form-control" ID="textBoxMessage" Rows="3" runat="server" placeholder="Enter your message here" MaxLength="250" TextMode="MultiLine"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Campo obrigatório!" ControlToValidate="textBoxMessage"></asp:RequiredFieldValidator>
+                        <asp:textbox class="form-control" id="textBoxMessage" rows="3" runat="server" placeholder="Enter your message here, minimum 20 characters maximum 250" textmode="MultiLine"></asp:textbox>
+                        <asp:requiredfieldvalidator id="RequiredFieldValidator3" runat="server" errormessage="Required field!" controltovalidate="textBoxMessage"></asp:requiredfieldvalidator>
+                    &nbsp;&nbsp;&nbsp;
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="textBoxMessage" ErrorMessage="Message too long!" ValidationExpression="\w{20,250}"></asp:RegularExpressionValidator>
                     </div>
-                    <asp:LinkButton class="btn btn-dark text-white" ID="submitContacts" runat="server" OnClick="submit_Click">Submit</asp:LinkButton>
+                    <asp:linkbutton class="btn btn-dark text-white" id="submitContacts" runat="server" onclick="submit_Click">Submit</asp:linkbutton>
                     <input class="btn btn-dark text-white" id="resetContacts" type="reset" value="Reset" />
-                    <%--</form>--%>
                 </div>
             </div>
         </div>
