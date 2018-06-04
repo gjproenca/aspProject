@@ -11,11 +11,11 @@
                 <div class="col-md-6">
                     <h1>Contacte-nos</h1>
                     <p>Obrigado por nos contactar</p>
-                    <div class="form-group">
+<%--                    <div class="form-group">
                         <label for="InputName">Nome</label>
                         <asp:TextBox class="form-control" ID="textBoxName" runat="server" TextMode="SingleLine" placeholder="Introduza o seu nome" MaxLength="100"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Campo obrigatório!" ControlToValidate="textBoxName"></asp:RequiredFieldValidator>
-                    </div>
+                    </div>--%>
                     <div class="form-group">
                         <label for="Textarea">Mensagem</label>
                         <asp:TextBox class="form-control" ID="textBoxMessage" Rows="3" runat="server" placeholder="Introduza a sua mensagem, mínimo 20 carateres, máximo 250" TextMode="MultiLine"></asp:TextBox>
