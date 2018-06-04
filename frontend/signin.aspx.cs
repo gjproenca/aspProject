@@ -43,13 +43,13 @@ public partial class frontend_signin : System.Web.UI.Page
 
             if (dv.Count == 0)
             {
-                ClientScript.RegisterStartupScript(GetType(), "alert", "alert('Nome de utilizador ou senha errada!');", true);
+                Response.Write("<script>alert('Nome de utilizador ou senha errada!');</script>");
                 textBoxUsername.Text = "";
                 textBoxPassword.Text = "";
             }
             else if (dvActive.Count == 0)
             {
-                ClientScript.RegisterStartupScript(GetType(), "alert", "alert('Conta não ativa!');", true);
+                Response.Write("<script>alert('Conta não ativa!');</script>");
             }
             else if (dvAdminActive.Count != 0)
             {
@@ -59,13 +59,13 @@ public partial class frontend_signin : System.Web.UI.Page
             else
             {
                 Session["sessionIDUser"] = dv[0]["IDUser"].ToString();
-                Response.Redirect("~/frontend/user-area.aspx");
+                Response.Redirect("~/frontend/user-success.aspx");
             }
         }
         catch (Exception ex)
         {
             //Response.Write(ex);
-            ClientScript.RegisterStartupScript(GetType(), "alert", "alert('Erro!');", true);
+            Response.Write("<script>alert('Erro!');</script>");
         }
     }
 }

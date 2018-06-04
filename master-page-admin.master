@@ -21,7 +21,7 @@
         <div>
             <nav class="navbar navbar-expand-md bg-primary navbar-dark">
                 <div class="container">
-                    <asp:HyperLink class="navbar-brand" ID="HyperLink1" runat="server" NavigateUrl="~/default.aspx">Webware (backend)</asp:HyperLink>
+                    <asp:HyperLink class="navbar-brand" ID="HyperLink1" runat="server" NavigateUrl="~/backend/admin-area.aspx">Webware (backend)</asp:HyperLink>
                     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent">
                         <span class="navbar-toggler-icon"></span>
                     </button>

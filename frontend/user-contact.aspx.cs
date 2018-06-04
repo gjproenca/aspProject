@@ -21,29 +21,28 @@ public partial class frontend_user_contact : System.Web.UI.Page
         SqlDataSource sds = new SqlDataSource();
         sds.ConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ToString();
         sds.SelectCommand = "SELECT * FROM [User] WHERE [IDUser] = @iduser";
-        sds.SelectParameters.Add("iduser", Session["sessionUser"].ToString());
+        sds.SelectParameters.Add("iduser", Session["sessionIDUser"].ToString());
         DataView dv = (DataView)sds.Select(DataSourceSelectArguments.Empty);
-
-        //TODO stopped here
 
         try
         {
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
             conn.Open();
-            string insertquery = "INSERT INTO [UserContact]([IDUser],[Name],[Username],[Email],[Message]) VALUES(@name,@email,@message)";
-            //here on the line above
+            string insertquery = "INSERT INTO [UserContact]([IDUser],[Name],[Username],[Email],[Message]) VALUES(@IDUser,@name,@username,@email,@message)";
             SqlCommand con = new SqlCommand(insertquery, conn);
-            con.Parameters.AddWithValue("@name", textBoxName.Text);
-            con.Parameters.AddWithValue("@email", textBoxEmail.Text);
+            con.Parameters.AddWithValue("@IDUser", dv[0]["IDUser"].ToString());
+            con.Parameters.AddWithValue("@name", dv[0]["Name"].ToString());
+            con.Parameters.AddWithValue("@username", dv[0]["Username"].ToString());
+            con.Parameters.AddWithValue("@email", dv[0]["Email"].ToString());
             con.Parameters.AddWithValue("@message", textBoxMessage.Text);
             con.ExecuteNonQuery();
             conn.Close();
         }
         catch (Exception ex)
         {
-            Response.Redirect("~/frontend/error.aspx");
+            Response.Redirect("~/frontend/user-error.aspx");
             //Response.Write("ERRO:" + ex.ToString());
         }
-        Response.Redirect("~/frontend/success.aspx");
+        Response.Redirect("~/frontend/user-success.aspx");
     }
 }
