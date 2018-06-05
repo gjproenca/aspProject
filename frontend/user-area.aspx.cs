@@ -15,37 +15,24 @@ public partial class frontend_user_area : System.Web.UI.Page
     {
 
     }
-
+    //TODO: download files, delete files, add timestamp to files
     protected void lnkbtnUpload_Click(object sender, EventArgs e)
     {
-        if (fileUpload.HasFile)
+        if (fileUpload.HasFiles)
         {
-            //TODO; loop trouf files with postedfiles wich returns a collectoin and add multiple files
-            //string path = "~/uploads/" + Path.GetFileName(fileUpload.PostedFile.FileName);
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
-            SqlCommand cmd;
-            string path;
-            //cmd.Parameters.AddWithValue("@path", path);
-            //conn.Open();
-            //cmd.ExecuteNonQuery();
-            //conn.Close();
-            //fileUpload.SaveAs(Server.MapPath("~/uploads/" + fileUpload.FileName));
-            //Response.Redirect("~/frontend/user-area.aspx");
 
-            //FIXME: multiply file upload corrupts images
-
-            IList<HttpPostedFile> postedFiles = fileUpload.PostedFiles;
-
-            foreach (HttpPostedFile file in postedFiles)
+            foreach (HttpPostedFile file in fileUpload.PostedFiles)
             {
-                path = "~/uploads/" + file.FileName;
-                cmd = new SqlCommand("INSERT INTO [Upload]([IDUser],[Path]) VALUES (@iduser,@path)", conn);
+                Guid guid = Guid.NewGuid();
+                string filename = Path.GetFileName(file.FileName);
+                file.SaveAs(Server.MapPath("~/uploads/") + guid + "_" + filename);
+                SqlCommand cmd = new SqlCommand("INSERT INTO [Upload]([IDUser],[Path]) VALUES (@iduser,@path)", conn);
                 cmd.Parameters.AddWithValue("@iduser", Session["sessionIDUser"]);
-                cmd.Parameters.AddWithValue("@path", path);
+                cmd.Parameters.AddWithValue("@path", guid + "_" + filename);
                 conn.Open();
                 cmd.ExecuteNonQuery();
                 conn.Close();
-                fileUpload.SaveAs(Server.MapPath("~/uploads/" + file.FileName));
             }
             Response.Redirect("~/frontend/user-area.aspx");
         }
