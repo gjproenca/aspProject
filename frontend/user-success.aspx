@@ -11,7 +11,7 @@
                 <div class="card border-success">
                     <div class="card-body text-success">
                         <h3 class="card-title">Sucesso!</h3>
-                        <p class="card-text">Será redirecionado automaticamente dentro de 5 segundos</p>
+                        <p class="card-text">Será redirecionado automaticamente dentro de 3 segundos</p>
                     </div>
                 </div>
             </div>

@@ -9,6 +9,6 @@ public partial class frontend_success : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        Response.AddHeader("REFRESH", "5;URL=./../default.aspx");
+        Response.AddHeader("REFRESH", "3;URL=./../default.aspx");
     }
 }

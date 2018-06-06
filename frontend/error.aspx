@@ -11,7 +11,7 @@
                 <div class="card border-danger">
                     <div class="card-body text-danger">
                         <h3 class="card-title">Erro!</h3>
-                        <p class="card-text">Você será redirecionado automaticamente dentro de 5 segundos</p>
+                        <p class="card-text">Você será redirecionado automaticamente dentro de 3 segundos</p>
                     </div>
                 </div>
             </div>
