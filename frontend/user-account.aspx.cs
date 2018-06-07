@@ -23,8 +23,6 @@ public partial class frontend_user_account : System.Web.UI.Page
         sqlCmd.Parameters.AddWithValue("@iduser", Session["sessionIDUser"]);
         sqlDa.Fill(dt);
 
-        Response.Write("page load");
-
         textBoxName.Text = dt.Rows[0]["Name"].ToString();
         textBoxUsername.Text = dt.Rows[0]["Username"].ToString();
         textBoxEmail.Text = dt.Rows[0]["Email"].ToString();
@@ -37,17 +35,12 @@ public partial class frontend_user_account : System.Web.UI.Page
         Response.Write("submit");
 
         //FIXME: Update data
-        SqlCommand cmd = new SqlCommand("UPDATE [Table] SET [Name] = @name WHERE [IDUser] = 1", conn);
-        //cmd.Parameters.AddWithValue("@iduser", Session["sessionIDUser"]);
+        SqlCommand cmd = new SqlCommand("UPDATE [User] SET [Name] = @name WHERE [IDUser] = @iduser", conn);
+        cmd.Parameters.AddWithValue("@iduser", Session["sessionIDUser"]);
         cmd.Parameters.AddWithValue("@name", textBoxName.Text);
         //cmd.Parameters.AddWithValue("@email", textBoxEmail.Text);
         conn.Open();
-        Response.Write("before execute");
-
         cmd.ExecuteNonQuery();
-        Response.Write("after execute");
         conn.Close();
-        Response.Write("after connclose");
-
     }
 }
