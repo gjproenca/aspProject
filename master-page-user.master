@@ -31,7 +31,7 @@
                                 <asp:HyperLink class="nav-link" ID="files" runat="server" NavigateUrl="~/frontend/user-area.aspx">Ficheiros</asp:HyperLink>
                             </li>
                             <li class="nav-item">
-                                <asp:HyperLink class="nav-link" ID="account" runat="server" NavigateUrl="~/frontend/user-area.aspx">Conta</asp:HyperLink>
+                                <asp:HyperLink class="nav-link" ID="account" runat="server" NavigateUrl="~/frontend/user-account.aspx">Conta</asp:HyperLink>
                             </li>
                             <li class="nav-item">
                                 <asp:HyperLink class="nav-link" ID="contact" runat="server" NavigateUrl="~/frontend/user-contact.aspx">Contactos</asp:HyperLink>
