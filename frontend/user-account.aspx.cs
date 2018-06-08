@@ -14,6 +14,11 @@ public partial class frontend_user_account : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Session["sessionIDUser"] == null)
+        {
+            Response.Redirect("~/frontend/error.aspx");
+        }
+
         if (!IsPostBack)
         {
             DataTable dt = new DataTable();

@@ -13,9 +13,9 @@ public partial class frontend_user_area : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        gridViewFiles.HeaderRow.TableSection = TableRowSection.TableHeader;
+            //gridViewFiles.HeaderRow.TableSection = TableRowSection.TableHeader;
     }
-    //TODO: download files, delete files, add timestamp to files
+
     protected void lnkbtnUpload_Click(object sender, EventArgs e)
     {
         if (fileUpload.HasFiles)

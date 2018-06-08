@@ -38,7 +38,7 @@
                             </li>
                         </ul>
                         &nbsp;
-                        <asp:LinkButton class="btn navbar-btn btn-dark ml-2 text-white" ID="signout" runat="server" OnClick="signout_Click">Sair</asp:LinkButton>
+                        <asp:HyperLink class="btn navbar-btn btn-dark ml-2 text-white" ID="hyperlinkLogout" runat="server" NavigateUrl="~/frontend/user-signout.aspx">Sair</asp:HyperLink>
                     </div>
                 </div>
             </nav>
