@@ -14,31 +14,31 @@ public partial class frontend_user_account : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        Response.Write(Session["sessionIDUser"]);
+        if (!IsPostBack)
+        {
+            DataTable dt = new DataTable();
+            conn.Open();
+            SqlCommand sqlCmd = new SqlCommand("SELECT * FROM [User] WHERE [IDUser] = @iduser", conn);
+            SqlDataAdapter sqlDa = new SqlDataAdapter(sqlCmd);
+            sqlCmd.Parameters.AddWithValue("@iduser", Session["sessionIDUser"]);
+            sqlDa.Fill(dt);
 
-        DataTable dt = new DataTable();
-        conn.Open();
-        SqlCommand sqlCmd = new SqlCommand("SELECT * FROM [User] WHERE [IDUser] = @iduser", conn);
-        SqlDataAdapter sqlDa = new SqlDataAdapter(sqlCmd);
-        sqlCmd.Parameters.AddWithValue("@iduser", Session["sessionIDUser"]);
-        sqlDa.Fill(dt);
+            textBoxName.Text = dt.Rows[0]["Name"].ToString();
+            textBoxUsername.Text = dt.Rows[0]["Username"].ToString();
+            textBoxEmail.Text = dt.Rows[0]["Email"].ToString();
 
-        textBoxName.Text = dt.Rows[0]["Name"].ToString();
-        textBoxUsername.Text = dt.Rows[0]["Username"].ToString();
-        textBoxEmail.Text = dt.Rows[0]["Email"].ToString();
-
-        conn.Close();
+            conn.Close();
+        }
     }
 
     protected void submitSignup_Click(object sender, EventArgs e)
     {
-        Response.Write("submit");
-
-        //FIXME: Update data
-        SqlCommand cmd = new SqlCommand("UPDATE [User] SET [Name] = @name WHERE [IDUser] = @iduser", conn);
-        cmd.Parameters.AddWithValue("@iduser", Session["sessionIDUser"]);
+        SqlCommand cmd = new SqlCommand("UPDATE [User] SET [Name] = @name, [Username] = @username, [Password] = @password, [Email] = @email WHERE [IDUser] = @iduser", conn);
         cmd.Parameters.AddWithValue("@name", textBoxName.Text);
-        //cmd.Parameters.AddWithValue("@email", textBoxEmail.Text);
+        cmd.Parameters.AddWithValue("@username", textBoxUsername.Text);
+        cmd.Parameters.AddWithValue("@password", textBoxPassword.Text);
+        cmd.Parameters.AddWithValue("@email", textBoxEmail.Text);
+        cmd.Parameters.AddWithValue("@iduser", Session["sessionIDUser"]);
         conn.Open();
         cmd.ExecuteNonQuery();
         conn.Close();
