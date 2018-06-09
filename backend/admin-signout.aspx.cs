@@ -9,6 +9,10 @@ public partial class backend_admin_signout : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Session["sessionIDAdmin"] == null)
+        {
+            Response.Redirect("~/frontend/error.aspx");
+        }
         Session["sessionIDAdmin"] = null;
         Response.Redirect("~/default.aspx");
     }

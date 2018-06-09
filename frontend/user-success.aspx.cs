@@ -9,6 +9,10 @@ public partial class frontend_user_success : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Session["sessionIDUser"] == null)
+        {
+            Response.Redirect("~/frontend/error.aspx");
+        }
         Response.AddHeader("REFRESH", "3;URL=./user-area.aspx");
     }
 }

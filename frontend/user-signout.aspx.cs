@@ -9,6 +9,10 @@ public partial class frontend_user_signout : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Session["sessionIDUser"] == null)
+        {
+            Response.Redirect("~/frontend/error.aspx");
+        }
         Session["sessionIDUser"] = null;
         Response.Redirect("~/default.aspx");
     }
