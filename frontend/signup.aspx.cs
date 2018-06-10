@@ -18,7 +18,6 @@ public partial class frontend_signup : System.Web.UI.Page
     protected void submitSignup_Click(object sender, EventArgs e)
     {
         int userId = 0;
-        string message;
 
         using (SqlConnection conn = new SqlConnection(configurationManager))
         {
@@ -40,10 +39,10 @@ public partial class frontend_signup : System.Web.UI.Page
             switch (userId)
             {
                 case -1:
-                    ClientScript.RegisterStartupScript(GetType(), "alert", "alert('Nome de utilizador já existente!');", true);
+                    Response.Write("<script>alert('Nome de utilizador já existente!');</script>");
                     break;
                 case -2:
-                    ClientScript.RegisterStartupScript(GetType(), "alert", "alert('Endereço de e-mail já existente, se quiser recuperar a password clique em Recuperar Senha);", true);
+                    Response.Write("<script>alert('Endereço de e-mail já existente, se quiser recuperar a password clique em Recuperar Senha');</script>");
                     break;
                 default:
                     SendEmail(userId);
