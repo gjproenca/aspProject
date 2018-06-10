@@ -28,10 +28,10 @@
                     <div class="collapse navbar-collapse text-center justify-content-end" id="navbar2SupportedContent">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <asp:HyperLink class="nav-link" ID="activateUsers" runat="server" NavigateUrl="~/backend/admin-activation.aspx">Ativar utilizadores</asp:HyperLink>
+                                <asp:HyperLink class="nav-link" ID="activateUsers" runat="server" NavigateUrl="~/backend/admin-activation.aspx">Permissões/Ativar utilizadores</asp:HyperLink>
                             </li>
                             <li class="nav-item">
-                                <asp:HyperLink class="nav-link" ID="contacts" runat="server" NavigateUrl="~/frontend/contacts.aspx">Contactos</asp:HyperLink>
+                                <asp:HyperLink class="nav-link" ID="contacts" runat="server" NavigateUrl="~/backend/admin-area.aspx">Dados dos utilizadores</asp:HyperLink>
                             </li>
                         </ul>
                         <asp:HyperLink class="btn navbar-btn btn-dark ml-2 text-white" ID="signout" runat="server" NavigateUrl="~/backend/admin-signout.aspx">Sair</asp:HyperLink>

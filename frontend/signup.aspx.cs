@@ -91,27 +91,27 @@ public partial class frontend_signup : System.Web.UI.Page
                 smtp.Send(mm);
             }
 
-            using (MailMessage mm = new MailMessage("webwarehouse13@gmail.com", "webwarehouse13@gmail.com"))
-            {
-                mm.Subject = "Requesito de ativação de conta";
-                string body = "Nome de utilizador: " + textBoxUsername.Text;
-                body += "<br /><br />Endereço de email: " + textBoxEmail.Text;
-                //body += String.Format("<a href='{0}/frontend.aspx'>Link</a>", HttpContext.Current.Request.Url.Host);
-                body += "<br /><br />Código: ";
-                body += activationCode;
-                body += "<br /><br />Por favor, tenha cuidado ao ativar uma conta.";
-                body += "<br /><br />Muito obrigado Webware.";
-                mm.Body = body;
-                mm.IsBodyHtml = true;
-                SmtpClient smtp = new SmtpClient();
-                smtp.Host = "smtp.gmail.com";
-                smtp.EnableSsl = true;
-                NetworkCredential NetworkCred = new NetworkCredential("webwarehouse13@gmail.com", "Ab-123456");
-                smtp.UseDefaultCredentials = true;
-                smtp.Credentials = NetworkCred;
-                smtp.Port = 587;
-                smtp.Send(mm);
-            }
+            //using (MailMessage mm = new MailMessage("webwarehouse13@gmail.com", "webwarehouse13@gmail.com"))
+            //{
+            //    mm.Subject = "Requesito de ativação de conta";
+            //    string body = "Nome de utilizador: " + textBoxUsername.Text;
+            //    body += "<br /><br />Endereço de email: " + textBoxEmail.Text;
+            //    //body += String.Format("<a href='{0}/frontend.aspx'>Link</a>", HttpContext.Current.Request.Url.Host);
+            //    body += "<br /><br />Código: ";
+            //    body += activationCode;
+            //    body += "<br /><br />Por favor, tenha cuidado ao ativar uma conta.";
+            //    body += "<br /><br />Muito obrigado Webware.";
+            //    mm.Body = body;
+            //    mm.IsBodyHtml = true;
+            //    SmtpClient smtp = new SmtpClient();
+            //    smtp.Host = "smtp.gmail.com";
+            //    smtp.EnableSsl = true;
+            //    NetworkCredential NetworkCred = new NetworkCredential("webwarehouse13@gmail.com", "Ab-123456");
+            //    smtp.UseDefaultCredentials = true;
+            //    smtp.Credentials = NetworkCred;
+            //    smtp.Port = 587;
+            //    smtp.Send(mm);
+            //}
         }
     }
 }

@@ -3,8 +3,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-
-
     <div class="container py-5">
         <div class="row justify-content-center mb-3">
             <asp:LinkButton class="btn btn-dark text-white" ID="lnkbtnUpload" runat="server" OnClick="lnkbtnUpload_Click">Carregar</asp:LinkButton>
@@ -12,7 +10,7 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <asp:GridView ID="gridViewFiles" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="IDUpload" DataSourceID="SqlDataSource2" EmptyDataText="There are no data records to display." CssClass="table table-striped table-hover" OnRowCommand="gridViewFiles_RowCommand" GridLines="None" ShowHeaderWhenEmpty="True">
+                <asp:GridView ID="gridViewFiles" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="IDUpload" DataSourceID="SqlDataSource2" EmptyDataText="Não existem dados." CssClass="table table-striped table-hover" OnRowCommand="gridViewFiles_RowCommand" GridLines="None" ShowHeaderWhenEmpty="True">
                     <Columns>
                         <asp:CommandField DeleteText="Apagar" HeaderText="Operação" ShowDeleteButton="True" />
                         <asp:BoundField DataField="IDUpload" HeaderText="IDUpload" ReadOnly="True" SortExpression="IDUpload" Visible="False" />
