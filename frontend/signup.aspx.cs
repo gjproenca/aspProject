@@ -39,10 +39,10 @@ public partial class frontend_signup : System.Web.UI.Page
             switch (userId)
             {
                 case -1:
-                    Response.Write("<script>alert('Nome de utilizador já existente!');</script>");
+                    Response.Write("<script>alert('Nome de utilizador já existente, se não se lembrar da senha e quiser repurá-la, clique em Recuperar senha');</script>");
                     break;
                 case -2:
-                    Response.Write("<script>alert('Endereço de e-mail já existente, se quiser recuperar a password clique em Recuperar Senha');</script>");
+                    Response.Write("<script>alert('Email já existente, se não se lembrar da senha e quiser repurá-la, clique em Recuperar senha');</script>");
                     break;
                 default:
                     SendEmail(userId);
@@ -76,7 +76,7 @@ public partial class frontend_signup : System.Web.UI.Page
             {
                 mm.Subject = "Obrigado por se ter registado";
                 string body = "Caro(a) " + textBoxName.Text.Trim() + ", estamos felizes em tê-lo na nossa equipa,";
-                body += "<br /><br /Por favor aguarde até um dos nossos administradores ativar a sua conta.";
+                body += "<br /><br />Por favor aguarde até um dos nossos administradores ativar a sua conta.";
                 //body += String.Format("<a href='{0}/frontend.aspx'>Link</a>", HttpContext.Current.Request.Url.Host);
                 body += "<br /><br />Muito obrigado em nome da Webware.";
                 mm.Body = body;

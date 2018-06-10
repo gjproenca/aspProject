@@ -17,8 +17,6 @@ public partial class frontend_user_area : System.Web.UI.Page
         {
             Response.Redirect("~/frontend/error.aspx");
         }
-
-        //gridViewFiles.HeaderRow.TableSection = TableRowSection.TableHeader;
     }
 
     protected void lnkbtnUpload_Click(object sender, EventArgs e)

@@ -1,9 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/master-page-front-end.master" AutoEventWireup="true" CodeFile="signin.aspx.cs" Inherits="frontend_signin" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-     <div class="py-5">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <div class="py-5">
         <div class="container">
             <div class="row">
                 <div class="col-md-3"></div>
@@ -25,9 +25,10 @@
                                 &nbsp;&nbsp;&nbsp;
                                 <asp:RegularExpressionValidator runat="server" ErrorMessage="Senha inválida!" ControlToValidate="textBoxPassword" ValidationExpression="^[^\s].{6,}[^\s]$"></asp:RegularExpressionValidator>
                             </div>
-                            <asp:LinkButton class="btn btn-dark text-white" ID="signin" runat="server" OnClick="signin_Click">Entrar</asp:LinkButton> 
+                            <asp:LinkButton class="btn btn-dark text-white" ID="signin" runat="server" OnClick="signin_Click">Entrar</asp:LinkButton>
                             &nbsp;&nbsp;&nbsp;
                             <input class="btn btn-dark text-white" id="resetSignin" type="reset" value="Limpar" />&nbsp;&nbsp;&nbsp;&nbsp;
+                            <asp:HyperLink class="btn btn-dark text-white float-sm-right" ID="forgotPassword" runat="server" NavigateUrl="~/frontend/forgot-password.aspx">Recuperar senha</asp:HyperLink>
                         </div>
                     </div>
                 </div>

@@ -43,7 +43,7 @@ public partial class frontend_signin : System.Web.UI.Page
 
             if (dv.Count == 0)
             {
-                Response.Write("<script>alert('Nome de utilizador ou senha errada!');</script>");
+                Response.Write("<script>alert('Nome de utilizador ou senha errada, se não se lembrar da senha e quiser repurá-la, clique em Recuperar senha');</script>");
                 textBoxUsername.Text = "";
                 textBoxPassword.Text = "";
             }

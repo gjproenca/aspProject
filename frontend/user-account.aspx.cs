@@ -36,7 +36,18 @@ public partial class frontend_user_account : System.Web.UI.Page
         }
     }
 
-    protected void submitSignup_Click(object sender, EventArgs e)
+    protected void deleteAccount_Click(object sender, EventArgs e)
+    {
+        SqlCommand cmd = new SqlCommand("UPDATE [User] SET [Active] = @active WHERE [IDUser] = @iduser", conn);
+        cmd.Parameters.AddWithValue("@active", false);
+        cmd.Parameters.AddWithValue("@iduser", Session["sessionIDUser"]);
+        conn.Open();
+        cmd.ExecuteNonQuery();
+        conn.Close();
+        Response.Redirect("~/frontend/success.aspx");
+    }
+
+    protected void submitEdit_Click(object sender, EventArgs e)
     {
         SqlDataSource sds = new SqlDataSource();
         sds.ConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ToString();
@@ -73,17 +84,8 @@ public partial class frontend_user_account : System.Web.UI.Page
             conn.Open();
             cmd.ExecuteNonQuery();
             conn.Close();
-        }
-    }
 
-    protected void deleteAccount_Click(object sender, EventArgs e)
-    {
-        SqlCommand cmd = new SqlCommand("UPDATE [User] SET [Active] = @active WHERE [IDUser] = @iduser", conn);
-        cmd.Parameters.AddWithValue("@active", false);
-        cmd.Parameters.AddWithValue("@iduser", Session["sessionIDUser"]);
-        conn.Open();
-        cmd.ExecuteNonQuery();
-        conn.Close();
-        Response.Redirect("~/frontend/success.aspx");
+            Response.Redirect("~/frontend/user-success.aspx");
+        }
     }
 }
