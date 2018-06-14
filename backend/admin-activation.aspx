@@ -8,7 +8,7 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <div style="width: 100%; height: 100%; overflow: scroll;">
+                <div style="width: 100%; height: 750px; overflow: auto;">
                     <asp:GridView ID="GridView1" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="IDUser" DataSourceID="SqlDataSource1" EmptyDataText="Não existem dados." CssClass="table table-striped table-hover" GridLines="None">
                         <Columns>
                             <asp:CommandField CancelText="Cancelar" DeleteText="Apagar permanentemente" EditText="Editar" ShowEditButton="True" UpdateText="Atualizar" />

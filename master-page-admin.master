@@ -28,7 +28,10 @@
                     <div class="collapse navbar-collapse text-center justify-content-end" id="navbar2SupportedContent">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <asp:HyperLink class="nav-link" ID="HyperLink2" runat="server" NavigateUrl="~/backend/admin-user-contact.aspx">Mensagens utilizador</asp:HyperLink>
+                                <asp:HyperLink class="nav-link" ID="upload" runat="server" NavigateUrl="~/backend/admin-upload.aspx">Ficheiros</asp:HyperLink>
+                            </li>
+                            <li class="nav-item">
+                                <asp:HyperLink class="nav-link" ID="messagesUser" runat="server" NavigateUrl="~/backend/admin-user-contact.aspx">Mensagens utilizador</asp:HyperLink>
                             </li>
                             <li class="nav-item">
                                 <asp:HyperLink class="nav-link" ID="messagesFrontend" runat="server" NavigateUrl="~/backend/admin-contact.aspx">Mensagens frontend</asp:HyperLink>
