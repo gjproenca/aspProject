@@ -5,8 +5,14 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="container py-5">
         <div class="row justify-content-center mb-3">
-            <asp:LinkButton class="btn btn-dark text-white" ID="lnkbtnUpload" runat="server" OnClick="lnkbtnUpload_Click">Carregar</asp:LinkButton>
-            <asp:FileUpload ID="fileUpload" runat="server" AllowMultiple="True" CssClass="btn border-dark" />
+            <div class="col-md-6 text-center">
+                <asp:LinkButton class="btn btn-dark text-white" ID="lnkbtnSearch" runat="server" OnClick="lnkbtnSearch_Click">Procurar</asp:LinkButton>
+                <asp:TextBox ID="textBoxSearch" runat="server"></asp:TextBox>
+            </div>
+            <div class="col-md-6 text-center">
+                <asp:LinkButton class="btn btn-dark text-white" ID="lnkbtnUpload" runat="server" OnClick="lnkbtnUpload_Click">Carregar</asp:LinkButton>
+                <asp:FileUpload ID="fileUpload" runat="server" AllowMultiple="True" CssClass="btn border-dark" />
+            </div>
         </div>
         <div class="row">
             <div class="col-md-12">
@@ -28,7 +34,7 @@
                         <asp:BoundField DataField="Timestamp" HeaderText="Data de criação" SortExpression="Timestamp" />
                     </Columns>
                 </asp:GridView>
-                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="UPDATE [Upload] SET [Active] = 0 WHERE [IDUpload] = @IDUpload" InsertCommand="INSERT INTO [Upload] ([IDUser], [Path], [Active], [Timestamp]) VALUES (@IDUser, @Path, @Active, @Timestamp)" SelectCommand="SELECT [IDUpload], [IDUser], [Path], [Active], [Timestamp] FROM [Upload] WHERE (([IDUser] = @IDUser) AND ([Active] = @Active)) ORDER BY [Timestamp]" UpdateCommand="UPDATE [Upload] SET [IDUser] = @IDUser, [Path] = @Path, [Active] = @Active, [Timestamp] = @Timestamp WHERE [IDUpload] = @IDUpload">
+                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="UPDATE [Upload] SET [Active] = 0 WHERE [IDUpload] = @IDUpload" InsertCommand="INSERT INTO [Upload] ([IDUser], [Path], [Active], [Timestamp]) VALUES (@IDUser, @Path, @Active, @Timestamp)" SelectCommand="SELECT [IDUpload], [IDUser], [Path], [Active], [Timestamp] FROM [Upload] WHERE (([IDUser] = @IDUser) AND ([Active] = @Active) AND ([Path] LIKE '%' + @Path + '%')) ORDER BY [Timestamp]" UpdateCommand="UPDATE [Upload] SET [IDUser] = @IDUser, [Path] = @Path, [Active] = @Active, [Timestamp] = @Timestamp WHERE [IDUpload] = @IDUpload">
                     <DeleteParameters>
                         <asp:Parameter Name="IDUpload" Type="Int32" />
                     </DeleteParameters>
@@ -36,17 +42,18 @@
                         <asp:Parameter Name="IDUser" Type="Int32" />
                         <asp:Parameter Name="Path" Type="String" />
                         <asp:Parameter Name="Active" Type="Boolean" />
-                        <asp:Parameter DbType="DateTime2" Name="Timestamp" />
+                        <asp:Parameter Name="Timestamp" Type="DateTime" />
                     </InsertParameters>
                     <SelectParameters>
                         <asp:SessionParameter Name="IDUser" SessionField="sessionIDUser" Type="Int32" />
                         <asp:Parameter DefaultValue="True" Name="Active" Type="Boolean" />
+                        <asp:ControlParameter ControlID="textBoxSearch" DefaultValue="%" Name="Path" PropertyName="Text" Type="String" />
                     </SelectParameters>
                     <UpdateParameters>
                         <asp:Parameter Name="IDUser" Type="Int32" />
                         <asp:Parameter Name="Path" Type="String" />
                         <asp:Parameter Name="Active" Type="Boolean" />
-                        <asp:Parameter DbType="DateTime2" Name="Timestamp" />
+                        <asp:Parameter Name="Timestamp" Type="DateTime" />
                         <asp:Parameter Name="IDUpload" Type="Int32" />
                     </UpdateParameters>
                 </asp:SqlDataSource>
