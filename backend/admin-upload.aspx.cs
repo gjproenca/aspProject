@@ -9,6 +9,9 @@ public partial class backend_admin_upload : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if (Session["sessionIDAdmin"] == null)
+        {
+            Response.Redirect("~/frontend/error.aspx");
+        }
     }
 }

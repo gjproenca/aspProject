@@ -26,15 +26,15 @@ public partial class backend_admin_user_contact : System.Web.UI.Page
     {
         GridViewRow gr = GridView1.SelectedRow;
         textBoxId.Text = gr.Cells[1].Text;
-        textBoxName.Text = gr.Cells[2].Text;
-        textBoxEmail.Text = gr.Cells[3].Text;
-        textBoxMessage.Text = gr.Cells[4].Text;
-        textBoxTimestamp.Text = gr.Cells[6].Text;
+        textBoxName.Text = gr.Cells[3].Text;
+        textBoxEmail.Text = gr.Cells[5].Text;
+        textBoxMessage.Text = gr.Cells[6].Text;
+        textBoxTimestamp.Text = gr.Cells[8].Text;
     }
 
     protected void submitResponse_Click(object sender, EventArgs e)
     {
-        if (textBoxId.Text != "")
+        if (textBoxId.Text != "" && textBoxSubject.Text != "" && textBoxResponse.Text != "")
         {
             try
             {
@@ -69,7 +69,7 @@ public partial class backend_admin_user_contact : System.Web.UI.Page
         }
         else
         {
-            Response.Write("<script>alert('Selecione uma mensagem!')</script>");
+            Response.Write("<script>alert('Selecione uma mensagem e adicione texto aos campos de resposta!')</script>");
         }
     }
 }

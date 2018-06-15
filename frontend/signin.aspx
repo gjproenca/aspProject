@@ -13,22 +13,23 @@
                             <h1 class="mb-4">Entrar</h1>
                             <div class="form-group">
                                 <label>Nome de utilizador</label>
-                                <asp:TextBox class="form-control" ID="textBoxUsername" runat="server" placeholder="Mínimo 8 carateres" TextMode="SingleLine"></asp:TextBox>
-                                <asp:RequiredFieldValidator runat="server" ErrorMessage="Campo obrigatório!" ControlToValidate="textBoxUsername"></asp:RequiredFieldValidator>
+                                <asp:textbox class="form-control" id="textBoxUsername" runat="server" placeholder="Mínimo 8 carateres" textmode="SingleLine"></asp:textbox>
+                                <asp:requiredfieldvalidator runat="server" errormessage="Campo obrigatório!" controltovalidate="textBoxUsername"></asp:requiredfieldvalidator>
                                 &nbsp;&nbsp;&nbsp;
-                                <asp:RegularExpressionValidator runat="server" ErrorMessage="Nome de utilizazdor inválido!" ValidationExpression="^\w{8,}$" ControlToValidate="textBoxUsername"></asp:RegularExpressionValidator>
+                                <asp:regularexpressionvalidator runat="server" errormessage="Nome de utilizazdor inválido!" validationexpression="^\w{8,}$" controltovalidate="textBoxUsername"></asp:regularexpressionvalidator>
                             </div>
                             <div class="form-group">
                                 <label>Senha</label>
-                                <asp:TextBox class="form-control" ID="textBoxPassword" runat="server" placeholder="Mínimo 8 carateres" TextMode="Password"></asp:TextBox>
-                                <asp:RequiredFieldValidator runat="server" ErrorMessage="Campo obrigatório!" ControlToValidate="textBoxPassword"></asp:RequiredFieldValidator>
+                                <asp:textbox class="form-control" id="textBoxPassword" runat="server" placeholder="Mínimo 8 carateres" textmode="Password"></asp:textbox>
+                                <asp:requiredfieldvalidator runat="server" errormessage="Campo obrigatório!" controltovalidate="textBoxPassword"></asp:requiredfieldvalidator>
                                 &nbsp;&nbsp;&nbsp;
-                                <asp:RegularExpressionValidator runat="server" ErrorMessage="Senha inválida!" ControlToValidate="textBoxPassword" ValidationExpression="^[^\s].{6,}[^\s]$"></asp:RegularExpressionValidator>
+                                <asp:regularexpressionvalidator runat="server" errormessage="Senha inválida!" controltovalidate="textBoxPassword" validationexpression="^[^\s].{6,}[^\s]$"></asp:regularexpressionvalidator>
                             </div>
-                            <asp:LinkButton class="btn btn-dark text-white" ID="signin" runat="server" OnClick="signin_Click">Entrar</asp:LinkButton>
-                            &nbsp;&nbsp;&nbsp;
-                            <input class="btn btn-dark text-white" id="resetSignin" type="reset" value="Limpar" />&nbsp;&nbsp;&nbsp;&nbsp;
-                            <asp:HyperLink class="btn btn-dark text-white float-sm-right" ID="forgotPassword" runat="server" NavigateUrl="~/frontend/forgot-password.aspx">Recuperar senha</asp:HyperLink>
+                            <asp:linkbutton class="btn btn-dark text-white" id="signin" runat="server" onclick="signin_Click">Entrar</asp:linkbutton>
+                            <input class="btn btn-dark text-white float-sm-right" id="resetSignin" type="reset" value="Limpar" />
+                            <br />
+                            <br />
+                            <asp:hyperlink class="btn btn-dark text-white float-sm-right" id="forgotPassword" runat="server" navigateurl="~/frontend/forgot-password.aspx">Recuperar senha</asp:hyperlink>
                         </div>
                     </div>
                 </div>

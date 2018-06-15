@@ -35,7 +35,7 @@ public partial class backend_admin_contact : System.Web.UI.Page
 
     protected void submitResponse_Click(object sender, EventArgs e)
     {
-        if (textBoxId.Text != "")
+        if (textBoxId.Text != "" && textBoxSubject.Text != "" && textBoxResponse.Text != "")
         {
             try
             {
@@ -71,7 +71,7 @@ public partial class backend_admin_contact : System.Web.UI.Page
         }
         else
         {
-            Response.Write("<script>alert('Selecione uma mensagem!')</script>");
+            Response.Write("<script>alert('Selecione uma mensagem e adicione texto aos campos de resposta!')</script>");
         }
     }
 }

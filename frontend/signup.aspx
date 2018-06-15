@@ -47,8 +47,9 @@
                                 <asp:RegularExpressionValidator runat="server" ErrorMessage="Endereço de email inválido!" ControlToValidate="textBoxEmail" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
                             </div>
                             <asp:LinkButton class="btn btn-dark text-white" ID="submitSignup" runat="server" OnClick="submitSignup_Click">Submeter</asp:LinkButton>
-                            &nbsp;&nbsp;&nbsp;
-                            <input class="btn btn-dark text-white" id="resetSignup" type="reset" value="Limpar" />
+                            <input class="btn btn-dark text-white float-sm-right" id="resetSignup" type="reset" value="Limpar" />
+                            <br />
+                            <br />
                             <asp:HyperLink class="btn btn-dark text-white float-sm-right" ID="forgotPassword" runat="server" NavigateUrl="~/frontend/forgot-password.aspx">Recuperar senha</asp:HyperLink>
                         </div>
                     </div>

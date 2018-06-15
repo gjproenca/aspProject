@@ -61,13 +61,15 @@
                         <div class="mt-4 col-md-4">
                             <h2 class="mb-4 text-secondary">Mapa</h2>
                             <ul class="list-unstyled">
-                                <a href="/default.aspx" class="text-white">Início</a>
+                                <a href="/backend/admin-area.aspx" class="text-white">Início</a>
                                 <br>
-                                <a href="#" class="text-white">About us</a>
+                                <a href="/backend/admin-upload.aspx" class="text-white">Ficheiros</a>
                                 <br>
-                                <a href="#" class="text-white">Our services</a>
+                                <a href="/backend/admin-user-contact.aspx" class="text-white">Mensagens utilizador</a>
                                 <br>
-                                <a href="#" class="text-white">Stories</a>
+                                <a href="/backend/admin-contact.aspx" class="text-white">Mensagens frontend</a>
+                                <br>
+                                <a href="/backend/admin-activation.aspx" class="text-white">Permissões/Ativar utiizadores</a>
                             </ul>
                         </div>
                         <div class="mt-4 col-md-4">

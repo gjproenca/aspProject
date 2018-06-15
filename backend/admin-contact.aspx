@@ -4,8 +4,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="container py-5">
-        <div class="row justify-content-center mb-3">
-        </div>
         <div class="row mb-5">
             <div class="form-group col-md-6">
                 <h1>Mensagem</h1>
@@ -28,14 +26,18 @@
                 <h1>Resposta</h1>
                 <label for="textBoxSubject">Assunto</label>
                 <asp:TextBox ID="textBoxSubject" runat="server" ReadOnly="False" Width="100%" CssClass="form-control"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Campo obrigatório!" ControlToValidate="textBoxSubject"></asp:RequiredFieldValidator>
                 <br />
                 <label for="textBoxResponse">Corpo da mensagem</label>
                 <asp:TextBox ID="textBoxResponse" runat="server" ReadOnly="False" Width="100%" Height="150px" TextMode="MultiLine" CssClass="form-control"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Campo obrigatório!" ControlToValidate="textBoxResponse"></asp:RequiredFieldValidator>
                 <br />
                 <br />
                 <asp:LinkButton ID="submitResponse" runat="server" OnClick="submitResponse_Click" CssClass="btn navbar-btn btn-dark ml-2 text-white">Submeter</asp:LinkButton>
+            </div>
+        </div>
+        <div class="row justify-content-center mb-3">
+            <div class="col-md-6 text-center">
+                <asp:LinkButton class="btn btn-dark text-white" ID="lnkbtnSearch" runat="server">Procurar</asp:LinkButton>
+                <asp:TextBox ID="textBoxSearch" runat="server" placeholder="Email"></asp:TextBox>
             </div>
         </div>
         <div class="row">
@@ -43,16 +45,16 @@
                 <div style="width: 100%; height: 750px; overflow: auto;">
                     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="IDContact" DataSourceID="SqlDataSource1" EmptyDataText="Não existem dados." CssClass="table table-striped table-hover" AllowSorting="True" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
                         <Columns>
-                            <asp:CommandField ShowSelectButton="True" />
-                            <asp:BoundField DataField="IDContact" HeaderText="IDContact" ReadOnly="True" SortExpression="IDContact" />
+                            <asp:CommandField SelectText="Selecionar" ShowSelectButton="True" />
+                            <asp:BoundField DataField="IDContact" HeaderText="IDContact" ReadOnly="True" SortExpression="IDContact" InsertVisible="False" />
                             <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
                             <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
                             <asp:BoundField DataField="Message" HeaderText="Message" SortExpression="Message" />
-                            <asp:CheckBoxField DataField="Active" HeaderText="Active" SortExpression="Active" />
+                            <asp:CheckBoxField DataField="Active" HeaderText="Active" SortExpression="Active" Visible="False" />
                             <asp:BoundField DataField="Timestamp" HeaderText="Timestamp" SortExpression="Timestamp" />
                         </Columns>
                     </asp:GridView>
-                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [Contact] WHERE [IDContact] = @IDContact" InsertCommand="INSERT INTO [Contact] ([Name], [Email], [Message], [Active], [Timestamp]) VALUES (@Name, @Email, @Message, @Active, @Timestamp)" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT [IDContact], [Name], [Email], [Message], [Active], [Rowversion], [Timestamp] FROM [Contact]" UpdateCommand="UPDATE [Contact] SET [Name] = @Name, [Email] = @Email, [Message] = @Message, [Active] = @Active, [Timestamp] = @Timestamp WHERE [IDContact] = @IDContact">
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [Contact] WHERE [IDContact] = @IDContact" InsertCommand="INSERT INTO [Contact] ([Name], [Email], [Message], [Active], [Timestamp]) VALUES (@Name, @Email, @Message, @Active, @Timestamp)" SelectCommand="SELECT [IDContact], [Name], [Email], [Message], [Active], [Timestamp] FROM [Contact] WHERE (([Email] LIKE '%' + @Email + '%') AND ([Active] = @Active)) ORDER BY [Timestamp]" UpdateCommand="UPDATE [Contact] SET [Name] = @Name, [Email] = @Email, [Message] = @Message, [Active] = @Active, [Timestamp] = @Timestamp WHERE [IDContact] = @IDContact">
                         <DeleteParameters>
                             <asp:Parameter Name="IDContact" Type="Int32" />
                         </DeleteParameters>
@@ -63,6 +65,10 @@
                             <asp:Parameter Name="Active" Type="Boolean" />
                             <asp:Parameter Name="Timestamp" Type="DateTime" />
                         </InsertParameters>
+                        <SelectParameters>
+                            <asp:ControlParameter ControlID="textBoxSearch" DefaultValue="%" Name="Email" PropertyName="Text" Type="String" />
+                            <asp:Parameter DefaultValue="true" Name="Active" Type="Boolean" />
+                        </SelectParameters>
                         <UpdateParameters>
                             <asp:Parameter Name="Name" Type="String" />
                             <asp:Parameter Name="Email" Type="String" />

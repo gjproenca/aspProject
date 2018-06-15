@@ -6,8 +6,8 @@
     <div class="container py-5">
         <div class="row justify-content-center mb-3">
             <div class="col-md-6 text-center">
-                <asp:LinkButton class="btn btn-dark text-white" ID="lnkbtnSearch" runat="server" OnClick="lnkbtnSearch_Click">Procurar</asp:LinkButton>
-                <asp:TextBox ID="textBoxSearch" runat="server"></asp:TextBox>
+                <asp:LinkButton class="btn btn-dark text-white" ID="lnkbtnSearch" runat="server">Procurar</asp:LinkButton>
+                <asp:TextBox ID="textBoxSearch" runat="server" placeholder="Nome"></asp:TextBox>
             </div>
             <div class="col-md-6 text-center">
                 <asp:LinkButton class="btn btn-dark text-white" ID="lnkbtnUpload" runat="server" OnClick="lnkbtnUpload_Click">Carregar</asp:LinkButton>

@@ -56,38 +56,4 @@ public partial class frontend_user_area : System.Web.UI.Page
             Response.End();
         }
     }
-
-    protected void lnkbtnSearch_Click(object sender, EventArgs e)
-    {
-        //if (dropDownListColumns.SelectedValue != "Escolha uma opção...")
-        //{
-        //    try
-        //    {
-        //        SqlCommand cmd = new SqlCommand();
-        //        cmd.Connection = conn;
-        //        cmd.CommandType = CommandType.Text;
-
-        //        if (dropDownListColumns.SelectedValue == "Nome")
-        //            cmd.CommandText = "SELECT [Path],[Timestamp] FROM [Upload] WHERE [Path] LIKE '%" + textBoxSearch.Text + "%'";
-        //        else
-        //            cmd.CommandText = "SELECT [Path],[Timestamp] FROM [Upload] WHERE [Timestamp] LIKE '%" + textBoxSearch.Text + "%'";
-
-        //        SqlDataAdapter adapter = new SqlDataAdapter();
-
-        //        adapter.SelectCommand = cmd;
-
-        //        DataTable dt = new DataTable();
-
-        //        adapter.Fill(dt);
-
-        //        GridView1.DataSource = dt;
-        //        GridView1.DataBind();
-
-        //    }
-        //    catch (Exception)
-        //    {
-        //        Response.Write("<script>alert('Erro!')</script>");
-        //    }
-        //}
-    }
 }

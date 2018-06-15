@@ -46,10 +46,11 @@
                                 &nbsp;&nbsp;&nbsp;
                                 <asp:RegularExpressionValidator runat="server" ErrorMessage="Endereço de email inválido!" ControlToValidate="textBoxEmail" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
                             </div>
-                            <asp:LinkButton class="btn btn-dark text-white" ID="submitEdit" runat="server" OnClick="submitEdit_Click" OnClientClick ="return confirm('Tem a certeza?')">Submeter</asp:LinkButton>
-                            &nbsp;&nbsp;&nbsp;
-                            <input class="btn btn-dark text-white" id="resetSignup" type="reset" value="Limpar" />
-                            <asp:LinkButton class="btn btn-dark text-white float-sm-right" ID="deleteAccount" runat="server" OnClientClick ="return confirm('Tem a certeza?')" OnClick="deleteAccount_Click">Apagar conta</asp:LinkButton>
+                            <asp:LinkButton class="btn btn-dark text-white" ID="submitEdit" runat="server" OnClick="submitEdit_Click" OnClientClick="return confirm('Tem a certeza?')">Submeter</asp:LinkButton>
+                            <input class="btn btn-dark text-white float-sm-right" id="resetSignup" type="reset" value="Limpar" />
+                            <br />
+                            <br />
+                            <asp:LinkButton class="btn btn-dark text-white float-sm-right" ID="deleteAccount" runat="server" OnClientClick="return confirm('Tem a certeza?')" OnClick="deleteAccount_Click">Apagar conta</asp:LinkButton>
                         </div>
                     </div>
                 </div>
