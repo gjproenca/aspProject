@@ -25,7 +25,7 @@
                                 &nbsp;&nbsp;&nbsp;
                                 <asp:regularexpressionvalidator runat="server" errormessage="Senha inválida!" controltovalidate="textBoxPassword" validationexpression="^[^\s].{6,}[^\s]$"></asp:regularexpressionvalidator>
                             </div>
-                            <asp:linkbutton class="btn btn-dark text-white" id="signin" runat="server" onclick="signin_Click">Entrar</asp:linkbutton>
+                            <asp:linkbutton class="btn btn-dark text-white" id="signin" runat="server" onclick="signin_Click"><i class="fa fa-sign-in"></i> Entrar</asp:linkbutton>
                             <input class="btn btn-dark text-white float-sm-right" id="resetSignin" type="reset" value="Limpar" />
                             <br />
                             <br />

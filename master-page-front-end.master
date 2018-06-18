@@ -1,7 +1,5 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="master-page-front-end.master.cs" Inherits="master_page_front_end" %>
 
-<%--FIX: collapse menu not being aligned--%>
-
 <!DOCTYPE html>
 <html>
 <head runat="server">
@@ -10,9 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link href="/content/bootstrap.css" rel="stylesheet" type="text/css" />
-    <link href="/css/styleSheet.css" rel="stylesheet" />
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="content/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="css/styleSheet.css" rel="stylesheet" type="text/css" />
+
+    <%--My CSS--%>
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="content/font-awesome.min.css" rel="stylesheet" />
+
     <title>Webware</title>
 
     <asp:ContentPlaceHolder ID="head" runat="server">
@@ -30,11 +32,11 @@
                     <div class="collapse navbar-collapse text-center justify-content-end" id="navbar2SupportedContent">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <asp:HyperLink class="nav-link" ID="contacts" runat="server" NavigateUrl="~/frontend/contact.aspx">Contactos</asp:HyperLink>
+                                <asp:HyperLink class="nav-link" ID="contacts" runat="server" NavigateUrl="~/frontend/contact.aspx"><i class="fa fa-envelope"></i> Contactos</asp:HyperLink>
                             </li>
                         </ul>
-                        <asp:HyperLink class="btn navbar-btn btn-dark ml-2 text-white" ID="signin" runat="server" NavigateUrl="~/frontend/signin.aspx">Entrar</asp:HyperLink>
-                        <asp:HyperLink class="btn navbar-btn btn-dark ml-2 text-white" ID="signup" runat="server" NavigateUrl="~/frontend/signup.aspx">Registar</asp:HyperLink>
+                        <asp:HyperLink class="btn navbar-btn btn-dark ml-2 text-white" ID="signin" runat="server" NavigateUrl="~/frontend/signin.aspx"><i class="fa fa-sign-in"></i> Entrar</asp:HyperLink>
+                        <asp:HyperLink class="btn navbar-btn btn-dark ml-2 text-white" ID="signup" runat="server" NavigateUrl="~/frontend/signup.aspx"><i class="fa fa-user-plus"></i> Registar</asp:HyperLink>
                     </div>
                 </div>
             </nav>
@@ -65,7 +67,7 @@
                             <h2 class="mb-4">Contactos</h2>
                             <p>
                                 <a href="tel:213 432 534" class="text-white">
-                                    <i class="fa d-inline  text-secondary fa-phone"></i>213 432 534</a>
+                                    <i class="fa d-inline  text-secondary fa-phone"></i> 213 432 534</a>
                             </p>
                             <p>
                                 <a href="mailto:webwarehouse13@gmail.com" class="text-white">webwarehouse13@gmail.com</a>
