@@ -36,13 +36,13 @@
         </div>
         <div class="row justify-content-center mb-3">
             <div class="col-md-12 text-center">
-                <asp:linkbutton class="btn btn-dark text-white" id="LinkButton1" runat="server"><i class="fa fa-search"></i> Procurar</asp:linkbutton>
-                <asp:textbox id="textBoxSearchName" runat="server" placeholder="Name" autopostback="True"></asp:textbox>
-                <asp:textbox id="textBoxSearchEmail" runat="server" placeholder="Email" autopostback="True"></asp:textbox>
-                <asp:radiobuttonlist id="rblSearchActive" runat="server" AutoPostBack="True" RepeatDirection="Horizontal" RepeatLayout="Flow">
+                <asp:LinkButton class="btn btn-dark text-white" ID="LinkButton1" runat="server"><i class="fa fa-search"></i> Procurar</asp:LinkButton>
+                <asp:TextBox ID="textBoxSearchName" runat="server" placeholder="Name"></asp:TextBox>
+                <asp:TextBox ID="textBoxSearchEmail" runat="server" placeholder="Email"></asp:TextBox>
+                <asp:RadioButtonList ID="rblSearchActive" runat="server" RepeatDirection="Horizontal" RepeatLayout="Flow">
                     <asp:ListItem Value="true">Ativo</asp:ListItem>
                     <asp:ListItem Value="false">Não ativo</asp:ListItem>
-                </asp:radiobuttonlist>
+                </asp:RadioButtonList>
             </div>
         </div>
         <div class="row">

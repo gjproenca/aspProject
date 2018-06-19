@@ -7,9 +7,9 @@
         <div class="row justify-content-center mb-3">
             <div class="col-md-12 text-center">
                 <asp:LinkButton class="btn btn-dark text-white" ID="lnkbtnSearch" runat="server"><i class="fa fa-search"></i> Procurar</asp:LinkButton>
-                <asp:TextBox ID="textBoxSearchName" runat="server" placeholder="Name" AutoPostBack="True"></asp:TextBox>
-                <asp:TextBox ID="textBoxSearchUsername" runat="server" placeholder="Username" AutoPostBack="True"></asp:TextBox>
-                <asp:TextBox ID="textBoxSearchEmail" runat="server" placeholder="Email" AutoPostBack="True"></asp:TextBox>
+                <asp:TextBox ID="textBoxSearchName" runat="server" placeholder="Name"></asp:TextBox>
+                <asp:TextBox ID="textBoxSearchUsername" runat="server" placeholder="Username"></asp:TextBox>
+                <asp:TextBox ID="textBoxSearchEmail" runat="server" placeholder="Email"></asp:TextBox>
             </div>
         </div>
         <div class="row">
