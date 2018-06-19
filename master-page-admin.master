@@ -48,7 +48,7 @@
                                 <asp:HyperLink class="nav-link" ID="contacts" runat="server" NavigateUrl="~/backend/admin-area.aspx">Dados dos utilizadores</asp:HyperLink>
                             </li>
                         </ul>
-                        <asp:HyperLink class="btn navbar-btn btn-dark ml-2 text-white" ID="signout" runat="server" NavigateUrl="~/backend/admin-signout.aspx">Sair</asp:HyperLink>
+                        <asp:HyperLink class="btn navbar-btn btn-dark ml-2 text-white" ID="signout" runat="server" NavigateUrl="~/backend/admin-signout.aspx"><i class="fa fa-sign-out"></i> Sair</asp:HyperLink>
                     </div>
                 </div>
             </nav>

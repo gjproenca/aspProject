@@ -28,7 +28,7 @@ public partial class backend_admin_contact : System.Web.UI.Page
         textBoxName.Text = gr.Cells[2].Text;
         textBoxEmail.Text = gr.Cells[3].Text;
         textBoxMessage.Text = gr.Cells[4].Text;
-        textBoxTimestamp.Text = gr.Cells[6].Text;
+        textBoxTimestamp.Text = gr.Cells[5].Text;
     }
 
 

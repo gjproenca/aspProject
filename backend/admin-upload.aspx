@@ -5,9 +5,13 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="container py-5">
         <div class="row justify-content-center mb-3">
-            <div class="col-md-6 text-center">
-                <asp:LinkButton class="btn btn-dark text-white" ID="lnkbtnSearch" runat="server">Procurar</asp:LinkButton>
-                <asp:TextBox ID="textBoxSearch" runat="server" placeholder="Nome"></asp:TextBox>
+            <div class="col-md-12 text-center">
+                <asp:linkbutton class="btn btn-dark text-white" id="LinkButton1" runat="server"><i class="fa fa-search"></i> Procurar</asp:linkbutton>
+                <asp:textbox id="textBoxSearchPath" runat="server" placeholder="Path"></asp:textbox>
+                <asp:radiobuttonlist id="rblSearchActive" runat="server" RepeatDirection="Horizontal" RepeatLayout="Flow">
+                    <asp:ListItem Value="true">Ativo</asp:ListItem>
+                    <asp:ListItem Value="false">Não ativo</asp:ListItem>
+                </asp:radiobuttonlist>
             </div>
         </div>
         <div class="row">
@@ -23,7 +27,7 @@
                             <asp:BoundField DataField="Timestamp" HeaderText="Timestamp" SortExpression="Timestamp" ReadOnly="True" />
                         </Columns>
                     </asp:GridView>
-                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [Upload] WHERE [IDUpload] = @IDUpload" InsertCommand="INSERT INTO [Upload] ([IDUser], [Path], [Active], [Timestamp]) VALUES (@IDUser, @Path, @Active, @Timestamp)" SelectCommand="SELECT [IDUpload], [IDUser], [Path], [Active], [Timestamp] FROM [Upload] WHERE ([Path] LIKE '%' + @Path + '%') ORDER BY [Timestamp]" UpdateCommand="UPDATE [Upload] SET [Active] = @Active WHERE [IDUpload] = @IDUpload">
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [Upload] WHERE [IDUpload] = @IDUpload" InsertCommand="INSERT INTO [Upload] ([IDUser], [Path], [Active], [Timestamp]) VALUES (@IDUser, @Path, @Active, @Timestamp)" SelectCommand="SELECT [IDUpload], [IDUser], [Path], [Active], [Timestamp] FROM [Upload] WHERE (([Active] = @Active) AND ([Path] LIKE '%' + @Path + '%')) ORDER BY [IDUpload]" UpdateCommand="UPDATE [Upload] SET [Active] = @Active, [Timestamp] = GETDATE() WHERE [IDUpload] = @IDUpload">
                         <DeleteParameters>
                             <asp:Parameter Name="IDUpload" Type="Int32" />
                         </DeleteParameters>
@@ -34,7 +38,8 @@
                             <asp:Parameter Name="Timestamp" Type="DateTime" />
                         </InsertParameters>
                         <SelectParameters>
-                            <asp:ControlParameter ControlID="textBoxSearch" DefaultValue="%" Name="Path" PropertyName="Text" Type="String" />
+                            <asp:ControlParameter ControlID="rblSearchActive" DefaultValue="true" Name="Active" PropertyName="SelectedValue" Type="Boolean" />
+                            <asp:ControlParameter ControlID="textBoxSearchPath" DefaultValue="%" Name="Path" PropertyName="Text" Type="String" />
                         </SelectParameters>
                         <UpdateParameters>
                             <asp:Parameter Name="IDUser" Type="Int32" />
@@ -48,6 +53,5 @@
             </div>
         </div>
     </div>
-    <%--TODO: enable bapging and center--%>
 </asp:Content>
 

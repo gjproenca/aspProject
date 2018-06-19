@@ -35,9 +35,14 @@
             </div>
         </div>
         <div class="row justify-content-center mb-3">
-            <div class="col-md-6 text-center">
-                <asp:LinkButton class="btn btn-dark text-white" ID="lnkbtnSearch" runat="server">Procurar</asp:LinkButton>
-                <asp:TextBox ID="textBoxSearch" runat="server" placeholder="Email"></asp:TextBox>
+            <div class="col-md-12 text-center">
+                <asp:linkbutton class="btn btn-dark text-white" id="LinkButton1" runat="server"><i class="fa fa-search"></i> Procurar</asp:linkbutton>
+                <asp:textbox id="textBoxSearchName" runat="server" placeholder="Name" autopostback="True"></asp:textbox>
+                <asp:textbox id="textBoxSearchEmail" runat="server" placeholder="Email" autopostback="True"></asp:textbox>
+                <asp:radiobuttonlist id="rblSearchActive" runat="server" AutoPostBack="True" RepeatDirection="Horizontal" RepeatLayout="Flow">
+                    <asp:ListItem Value="true">Ativo</asp:ListItem>
+                    <asp:ListItem Value="false">Não ativo</asp:ListItem>
+                </asp:radiobuttonlist>
             </div>
         </div>
         <div class="row">
@@ -45,18 +50,16 @@
                 <div style="width: 100%; height: 750px; overflow: auto;">
                     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="IDUserContact" DataSourceID="SqlDataSource2" EmptyDataText="Não existem dados." CssClass="table table-striped table-hover" AllowSorting="True" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" GridLines="None">
                         <Columns>
-                            <asp:CommandField ShowSelectButton="True" SelectText="Selecionar" />
+                            <asp:CommandField SelectText="Selecionar" ShowSelectButton="True" />
                             <asp:BoundField DataField="IDUserContact" HeaderText="IDUserContact" ReadOnly="True" SortExpression="IDUserContact" InsertVisible="False" />
-                            <asp:BoundField DataField="IDUser" HeaderText="IDUser" SortExpression="IDUser" Visible="False" />
+                            <asp:BoundField DataField="IDUser" HeaderText="IDUser" SortExpression="IDUser" />
                             <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
-                            <asp:BoundField DataField="Username" HeaderText="Username" SortExpression="Username" />
                             <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
                             <asp:BoundField DataField="Message" HeaderText="Message" SortExpression="Message" />
-                            <asp:CheckBoxField DataField="Active" HeaderText="Active" SortExpression="Active" Visible="False" />
                             <asp:BoundField DataField="Timestamp" HeaderText="Timestamp" SortExpression="Timestamp" />
                         </Columns>
                     </asp:GridView>
-                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [IDUserContact], [IDUser], [Name], [Username], [Email], [Message], [Active], [Timestamp] FROM [UserContact] WHERE (([Email] LIKE '%' + @Email + '%') AND ([Active] = @Active)) ORDER BY [Timestamp]" DeleteCommand="DELETE FROM [UserContact] WHERE [IDUserContact] = @IDUserContact" InsertCommand="INSERT INTO [UserContact] ([IDUser], [Name], [Username], [Email], [Message], [Active], [Timestamp]) VALUES (@IDUser, @Name, @Username, @Email, @Message, @Active, @Timestamp)" UpdateCommand="UPDATE [UserContact] SET [IDUser] = @IDUser, [Name] = @Name, [Username] = @Username, [Email] = @Email, [Message] = @Message, [Active] = @Active, [Timestamp] = @Timestamp WHERE [IDUserContact] = @IDUserContact">
+                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [IDUserContact], [IDUser], [Name], [Username], [Email], [Message], [Timestamp] FROM [UserContact] WHERE (([Email] LIKE '%' + @Email + '%') AND ([Name] LIKE '%' + @Name + '%') AND ([Active] = @Active)) ORDER BY [IDUserContact]" DeleteCommand="DELETE FROM [UserContact] WHERE [IDUserContact] = @IDUserContact" InsertCommand="INSERT INTO [UserContact] ([IDUser], [Name], [Username], [Email], [Message], [Timestamp]) VALUES (@IDUser, @Name, @Username, @Email, @Message, @Timestamp)" UpdateCommand="UPDATE [UserContact] SET [IDUser] = @IDUser, [Name] = @Name, [Username] = @Username, [Email] = @Email, [Message] = @Message, [Timestamp] = @Timestamp WHERE [IDUserContact] = @IDUserContact">
                         <DeleteParameters>
                             <asp:Parameter Name="IDUserContact" Type="Int32" />
                         </DeleteParameters>
@@ -66,12 +69,12 @@
                             <asp:Parameter Name="Username" Type="String" />
                             <asp:Parameter Name="Email" Type="String" />
                             <asp:Parameter Name="Message" Type="String" />
-                            <asp:Parameter Name="Active" Type="Boolean" />
                             <asp:Parameter Name="Timestamp" Type="DateTime" />
                         </InsertParameters>
                         <SelectParameters>
-                            <asp:ControlParameter ControlID="textBoxSearch" DefaultValue="%" Name="Email" PropertyName="Text" Type="String" />
-                            <asp:Parameter DefaultValue="true" Name="Active" Type="Boolean" />
+                            <asp:ControlParameter ControlID="textBoxSearchEmail" DefaultValue="%" Name="Email" PropertyName="Text" Type="String" />
+                            <asp:ControlParameter ControlID="textBoxSearchName" DefaultValue="%" Name="Name" PropertyName="Text" Type="String" />
+                            <asp:ControlParameter ControlID="rblSearchActive" DefaultValue="true" Name="Active" PropertyName="SelectedValue" Type="Boolean" />
                         </SelectParameters>
                         <UpdateParameters>
                             <asp:Parameter Name="IDUser" Type="Int32" />
@@ -79,7 +82,6 @@
                             <asp:Parameter Name="Username" Type="String" />
                             <asp:Parameter Name="Email" Type="String" />
                             <asp:Parameter Name="Message" Type="String" />
-                            <asp:Parameter Name="Active" Type="Boolean" />
                             <asp:Parameter Name="Timestamp" Type="DateTime" />
                             <asp:Parameter Name="IDUserContact" Type="Int32" />
                         </UpdateParameters>
