@@ -34,8 +34,6 @@
                         <label for="Textarea">Mensagem</label>
                         <asp:TextBox class="form-control" ID="textBoxMessage" Rows="3" runat="server" placeholder="Introduza a sua mensagem, mínimo 20 carateres, máximo 250" TextMode="MultiLine"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Campo obrigatório!" ControlToValidate="textBoxMessage"></asp:RequiredFieldValidator>
-                        &nbsp;&nbsp;&nbsp;
-                        <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="textBoxMessage" ErrorMessage="A mensagem não cumpre os requesitos!" ValidationExpression="\w{20,250}"></asp:RegularExpressionValidator>
                     </div>
                     <asp:LinkButton class="btn btn-dark text-white" ID="submitContacts" runat="server" OnClick="submit_Click">Submeter</asp:LinkButton>
                     <input class="btn btn-dark text-white float-sm-right" id="resetContacts" type="reset" value="Limpar" />

@@ -16,7 +16,7 @@
                                 <asp:TextBox class="form-control" ID="textBoxName" runat="server" placeholder="Mínimo 3 carateres"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Campo obrigatório!" ControlToValidate="textBoxName"></asp:RequiredFieldValidator>
                                 &nbsp;&nbsp;&nbsp;
-                                <asp:RegularExpressionValidator runat="server" ErrorMessage="Nome inválido!" ControlToValidate="textBoxName" ValidationExpression="^[A-Za-z]{2,}[A-Za-z\s]*[A-Za-z]$"></asp:RegularExpressionValidator>
+                                <asp:RegularExpressionValidator runat="server" ErrorMessage="Nome inválido!" ControlToValidate="textBoxName" ValidationExpression="^[A-Za-zÀ-Úà-ú]{2,}[A-Za-zÀ-Úà-ú\s]*[A-Za-zÀ-Úà-ú]$"></asp:RegularExpressionValidator>
                             </div>
                             <div class="form-group">
                                 <label>Nome de utilizador</label>
